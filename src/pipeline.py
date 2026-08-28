@@ -149,6 +149,18 @@ def run_pipeline(input_path: str, output_path: str) -> RunStats:
                     rx, ry = geo.orig_px_to_ruler(*flow_points[t.track_id])
                     t.kf.statePost[0, 0] = rx
                     t.kf.statePost[1, 0] = ry
+            # Same nudge for the ball (track_id 0) -- this was previously
+            # missing, so the ball only ever got a bare Kalman prediction
+            # between keyframes and never benefited from the optical-flow
+            # point that was already being computed for it above. That's
+            # why the ball marker was drifting/curving away from the real
+            # ball on non-keyframes instead of tracking it.
+            if (manager.ball_track is not None
+                    and manager.ball_track.track_id in flow_points
+                    and geo is not None):
+                rx, ry = geo.orig_px_to_ruler(*flow_points[manager.ball_track.track_id])
+                manager.ball_track.kf.statePost[0, 0] = rx
+                manager.ball_track.kf.statePost[1, 0] = ry
 
         snapshot = manager.snapshot()
         out_frames.append(render_frame(frame_bgr, geo, snapshot))

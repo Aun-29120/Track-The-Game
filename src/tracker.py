@@ -15,6 +15,7 @@ Two things happen here, kept deliberately separate:
 """
 from __future__ import annotations
 import itertools
+import math
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -24,6 +25,10 @@ from scipy.optimize import linear_sum_assignment
 
 from config import CFG
 from appearance import sample_torso_histogram, histogram_similarity
+
+
+def _dist(x1: float, y1: float, x2: float, y2: float) -> float:
+    return math.hypot(x1 - x2, y1 - y2)
 
 # Detections/tracks are represented as points; for IoU purposes we treat
 # each point as the center of a small fixed-size box. This is a stand-in
@@ -120,8 +125,13 @@ class TrackManager:
         # 1. predict every existing track forward
         preds = {t.track_id: t.predict() for t in self.player_tracks}
 
-        # 2. build cost matrix: tracks (rows) x detections (cols)
-        dets = detections.players
+        # 2. dedup detections within this single keyframe's response --
+        #    two same-team detections sitting on top of each other are
+        #    almost always one player double-counted by the VLM, not two
+        #    players. Left unfiltered, both would either fight over the
+        #    same track in the Hungarian assignment or -- worse -- one
+        #    matches and the other spawns a duplicate ghost track.
+        dets = self._dedup_detections(detections.players)
         n_tracks, n_dets = len(self.player_tracks), len(dets)
         frame_h_px = frame_bgr.shape[0]
         det_hists = []
@@ -159,6 +169,16 @@ class TrackManager:
                 continue  # too costly to trust -- treat as no-match
             t = self.player_tracks[r]
             d = dets[c]
+            # Teleportation gate: even a cheap-enough IoU/appearance match
+            # can be flat-out wrong if the VLM hallucinated a position far
+            # from where this track actually was. A real player can't
+            # cover more than max_player_jump_norm ruler-units between two
+            # keyframes, so anything past that is treated as noise -- the
+            # track just ages instead of getting its identity hijacked and
+            # teleported across the pitch.
+            px, py = preds[t.track_id]
+            if _dist(px, py, d.x, d.y) > CFG.max_player_jump_norm:
+                continue
             t.correct(d.x, d.y)
             t.histogram = det_hists[c]
             t.history.append((frame_idx, d.x, d.y))
@@ -175,6 +195,15 @@ class TrackManager:
         for j, d in enumerate(dets):
             if j in matched_det_idxs:
                 continue
+            # Spawn sanity gate: an unmatched detection sitting right on
+            # top of a track that just failed to match (e.g. rejected by
+            # the teleport gate above, or lost this keyframe to appearance
+            # noise) is almost always that same player, not a new one.
+            # Without this, a single noisy keyframe can spawn a duplicate
+            # track next to an existing player, and the two flicker/fight
+            # for the marker on every subsequent keyframe.
+            if self._too_close_to_existing(d):
+                continue
             new_track = self._spawn_player(frame_idx, d, det_hists[j])
             self.player_tracks.append(new_track)
 
@@ -183,9 +212,14 @@ class TrackManager:
             if self.ball_track is None:
                 self.ball_track = self._spawn_ball(frame_idx, detections.ball)
             else:
-                self.ball_track.predict()
-                self.ball_track.correct(detections.ball.x, detections.ball.y)
-                self.ball_track.history.append((frame_idx, detections.ball.x, detections.ball.y))
+                bpx, bpy = self.ball_track.predict()
+                # Same teleportation gate as players, just with a looser
+                # threshold since the ball legitimately moves faster.
+                if _dist(bpx, bpy, detections.ball.x, detections.ball.y) <= CFG.max_ball_jump_norm:
+                    self.ball_track.correct(detections.ball.x, detections.ball.y)
+                    self.ball_track.history.append((frame_idx, detections.ball.x, detections.ball.y))
+                # else: implausible jump -- predict() above already advanced
+                # the filter, so it simply coasts on prediction this keyframe.
         elif self.ball_track is not None:
             self.ball_track.predict()  # coast on prediction alone this keyframe
 
@@ -198,6 +232,35 @@ class TrackManager:
         if self.ball_track is not None:
             x, y = self.ball_track.predict()
             self.ball_track.history.append((frame_idx, x, y))
+
+    @staticmethod
+    def _dedup_detections(dets: list) -> list:
+        """Drops near-duplicate detections of the same team within one
+        keyframe's response, keeping the first of each cluster. Compares
+        same-team pairs only -- two different-team detections standing
+        close together is normal (players marking each other), not a
+        duplicate."""
+        kept: list = []
+        for d in dets:
+            if any(
+                d.team == k.team and _dist(d.x, d.y, k.x, k.y) <= CFG.duplicate_detection_distance_norm
+                for k in kept
+            ):
+                continue
+            kept.append(d)
+        return kept
+
+    def _too_close_to_existing(self, det) -> bool:
+        """True if `det` lands close enough to an existing (still-alive)
+        track that it should be treated as noise/duplicate rather than a
+        brand-new player -- e.g. a track that narrowly missed matching
+        this keyframe (appearance blip, or rejected by the teleport gate)
+        shouldn't get a duplicate spawned right next to it."""
+        for t in self.player_tracks:
+            tx, ty = t.current_xy()
+            if _dist(tx, ty, det.x, det.y) <= CFG.min_new_track_spawn_distance_norm:
+                return True
+        return False
 
     def _spawn_player(self, frame_idx: int, det, hist: np.ndarray) -> Track:
         kf = _new_kalman()
