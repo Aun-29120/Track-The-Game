@@ -42,6 +42,14 @@ def main() -> None:
         print(f"  cost this video:    ${stats.total_cost_usd:.4f}{flag}  ({under} ${CFG.target_cost_usd:.2f} target)")
     else:
         print(f"  cost this video:    unavailable (mock mode, or provider didn't report cost)")
+    from vlm_client import get_openrouter_credits
+    limit, usage, limit_remaining = get_openrouter_credits()
+    if usage is not None:
+        print(f"  API Account Usage:  ${usage:.4f}")
+        if limit is not None:
+            print(f"  Credit Limit:       ${limit:.4f}")
+            print(f"  Credit Remaining:   ${limit_remaining:.4f}")
+
     print(f"  output written to:  {args.output_path}")
 
 

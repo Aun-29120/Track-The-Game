@@ -24,44 +24,25 @@ import cv2
 from scipy.optimize import linear_sum_assignment
 
 from config import CFG
-from appearance import sample_torso_histogram, histogram_similarity
+from appearance import histogram_similarity
 
 
 def _dist(x1: float, y1: float, x2: float, y2: float) -> float:
     return math.hypot(x1 - x2, y1 - y2)
 
-# Detections/tracks are represented as points; for IoU purposes we treat
-# each point as the center of a small fixed-size box. This is a stand-in
-# for real bounding boxes since our detections are point-based (feet
-# position), but it gives IoU the same "closer AND same-size" behavior
-# instead of raw distance, and it degrades gracefully to "distance-like"
-# when boxes don't overlap at all.
-BOX_HALF_SIZE_NORM = 0.35  # in ruler units
 
-
-def _box_from_point(x: float, y: float, half: float = BOX_HALF_SIZE_NORM) -> tuple[float, float, float, float]:
-    return (x - half, y - half, x + half, y + half)
-
-
-def _iou(box_a: tuple[float, float, float, float], box_b: tuple[float, float, float, float]) -> float:
-    ax0, ay0, ax1, ay1 = box_a
-    bx0, by0, bx1, by1 = box_b
-    ix0, iy0 = max(ax0, bx0), max(ay0, by0)
-    ix1, iy1 = min(ax1, bx1), min(ay1, by1)
-    iw, ih = max(0.0, ix1 - ix0), max(0.0, iy1 - iy0)
-    inter = iw * ih
-    area_a = (ax1 - ax0) * (ay1 - ay0)
-    area_b = (bx1 - bx0) * (by1 - by0)
-    union = area_a + area_b - inter
-    if union <= 0:
-        return 0.0
-    return inter / union
+def _iou(box1: tuple[float, float, float, float], box2: tuple[float, float, float, float]) -> float:
+    x1, y1, w1, h1 = box1
+    x2, y2, w2, h2 = box2
+    xi1, yi1 = max(x1, x2), max(y1, y2)
+    xi2, yi2 = min(x1 + w1, x2 + w2), min(y1 + h1, y2 + h2)
+    inter_area = max(0, xi2 - xi1) * max(0, yi2 - yi1)
+    union_area = (w1 * h1) + (w2 * h2) - inter_area
+    return inter_area / union_area if union_area > 0 else 0.0
 
 
 def _new_kalman() -> cv2.KalmanFilter:
-    """State: [x, y, vx, vy]. Measurement: [x, y]. Constant-velocity model,
-    as discussed in the thinking cap -- known to lag on sharp direction
-    changes, flagged there as an accepted limitation."""
+    """State: [x, y, vx, vy]. Measurement: [x, y]. Constant-velocity model."""
     kf = cv2.KalmanFilter(4, 2)
     kf.transitionMatrix = np.array(
         [[1, 0, 1, 0],
@@ -73,8 +54,13 @@ def _new_kalman() -> cv2.KalmanFilter:
         [[1, 0, 0, 0],
          [0, 1, 0, 0]], dtype=np.float32
     )
-    kf.processNoiseCov = np.eye(4, dtype=np.float32) * CFG.kalman_process_noise
-    kf.measurementNoiseCov = np.eye(2, dtype=np.float32) * CFG.kalman_measurement_noise
+    
+    process_noise = CFG.kalman_process_noise
+    kf.processNoiseCov = np.eye(4, dtype=np.float32) * process_noise
+    
+    measurement_noise = CFG.kalman_measurement_noise
+    kf.measurementNoiseCov = np.eye(2, dtype=np.float32) * measurement_noise
+    
     kf.errorCovPost = np.eye(4, dtype=np.float32)
     return kf
 
@@ -82,12 +68,14 @@ def _new_kalman() -> cv2.KalmanFilter:
 @dataclass
 class Track:
     track_id: int
-    team: str  # "A" / "B" / "ball"
     kf: cv2.KalmanFilter
     histogram: Optional[np.ndarray] = None
     age_since_match: int = 0
+    hit_streak: int = 1  # number of consecutive matches, for confirming tracks
     alive: bool = True
     history: list[tuple[int, float, float]] = field(default_factory=list)  # (frame_idx, x, y)
+    last_bbox_px: Optional[tuple[float, float, float, float]] = None # [x, y, w, h]
+    team: str = "A"
 
     def predict(self) -> tuple[float, float]:
         pred = self.kf.predict()
@@ -97,6 +85,7 @@ class Track:
         meas = np.array([[np.float32(x)], [np.float32(y)]])
         self.kf.correct(meas)
         self.age_since_match = 0
+        self.hit_streak += 1
 
     def current_xy(self) -> tuple[float, float]:
         s = self.kf.statePost
@@ -104,14 +93,15 @@ class Track:
 
 
 class TrackManager:
-    """Owns all player tracks (+ a single ball track). One instance per
-    clip. Call `step_keyframe` at VLM keyframes and `step_predict_only`
+    """Owns all player tracks. One instance per clip. 
+    Call `step_keyframe` at VLM keyframes and `step_predict_only`
     on the in-between frames covered by optical flow."""
 
     def __init__(self) -> None:
         self._next_id = itertools.count(1)
         self.player_tracks: list[Track] = []
-        self.ball_track: Optional[Track] = None
+        self.ball_position: Optional[tuple[float, float]] = None  # ruler-space (rx, ry)
+        self.ball_miss_count: int = 0
 
     # ---- keyframe update: predict, assign, correct ----
 
@@ -119,43 +109,117 @@ class TrackManager:
         self,
         frame_idx: int,
         frame_bgr: np.ndarray,
-        geo,  # RulerGeometry, for converting ruler coords -> pixel coords for histogram sampling
+        geo,  # RulerGeometry
         detections,  # schema.FrameDetections
+        team_classifier,  # TeamClassifier instance to compute torso histograms
     ) -> None:
+        # 0. Extract ball position (bypasses all player logic)
+        ball_updated = False
+        if detections.ball is not None:
+            bymin, bxmin, bymax, bxmax = detections.ball.box_2d
+            px_xmin, px_ymin = geo.ruler_to_orig_px(bxmin, bymin)
+            px_xmax, px_ymax = geo.ruler_to_orig_px(bxmax, bymax)
+            ball_cx = (px_xmin + px_xmax) / 2.0
+            ball_cy = (px_ymin + px_ymax) / 2.0
+            
+            # Sanity check: reject if it jumps > 150px from previous position
+            valid_jump = True
+            if self.ball_position is not None:
+                old_rx, old_ry = self.ball_position
+                old_px, old_py = geo.ruler_to_orig_px(old_rx, old_ry)
+                dist = ((old_px - ball_cx)**2 + (old_py - ball_cy)**2)**0.5
+                if dist > 150.0:
+                    valid_jump = False
+            
+            if valid_jump:
+                self.ball_position = geo.orig_px_to_ruler(ball_cx, ball_cy)
+                self.ball_miss_count = 0
+                ball_updated = True
+                
+        if not ball_updated:
+            self.ball_miss_count += 1
+            if self.ball_miss_count >= 2:
+                self.ball_position = None
+
         # 1. predict every existing track forward
         preds = {t.track_id: t.predict() for t in self.player_tracks}
 
-        # 2. dedup detections within this single keyframe's response --
-        #    two same-team detections sitting on top of each other are
-        #    almost always one player double-counted by the VLM, not two
-        #    players. Left unfiltered, both would either fight over the
-        #    same track in the Hungarian assignment or -- worse -- one
-        #    matches and the other spawns a duplicate ghost track.
-        dets = self._dedup_detections(detections.players)
+        # 2. Extract bounding boxes and apply NMS
+        raw_dets = []
+        bboxes_px = []
+        scores = []
+        for d in detections.detections:
+            r_ymin, r_xmin, r_ymax, r_xmax = d.box_2d
+            px_xmin, px_ymin = geo.ruler_to_orig_px(r_xmin, r_ymin)
+            px_xmax, px_ymax = geo.ruler_to_orig_px(r_xmax, r_ymax)
+            
+            w = max(1, px_xmax - px_xmin)
+            h = max(1, px_ymax - px_ymin)
+            bboxes_px.append([px_xmin, px_ymin, w, h])
+            scores.append(1.0)
+            raw_dets.append((d.box_2d, [px_xmin, px_ymin, w, h]))
+
+        if bboxes_px:
+            indices = cv2.dnn.NMSBoxes(bboxes_px, scores, 0.5, 0.4)
+            if len(indices) > 0:
+                indices = indices.flatten()
+            else:
+                indices = []
+        else:
+            indices = []
+
+        # kept detections after NMS
+        dets = [raw_dets[i] for i in indices]
+
         n_tracks, n_dets = len(self.player_tracks), len(dets)
-        frame_h_px = frame_bgr.shape[0]
+        
         det_hists = []
-        for d in dets:
-            px, py = geo.ruler_to_orig_px(d.x, d.y)
-            det_hists.append(sample_torso_histogram(frame_bgr, px, py, frame_h_px))
+        det_feet = []
+        for d_ruler, d_px in dets:
+            x, y, w, h = d_px
+            # Foot anchor for tracking
+            foot_px_x = x + w / 2.0
+            foot_px_y = y + h
+            # Project foot back to ruler space for Kalman filter state
+            foot_ruler_x, foot_ruler_y = geo.orig_px_to_ruler(foot_px_x, foot_px_y)
+            det_feet.append((foot_ruler_x, foot_ruler_y))
+            
+            # Compute histogram for appearance matching
+            hist = team_classifier.extract_jersey_histogram(frame_bgr, d_px)
+            det_hists.append(hist)
 
         if n_tracks and n_dets:
-            cost = np.ones((n_tracks, n_dets), dtype=np.float32)
+            cost = np.ones((n_tracks, n_dets), dtype=np.float32) * 1e6
             for i, t in enumerate(self.player_tracks):
-                px, py = preds[t.track_id]
-                box_t = _box_from_point(px, py)
-                for j, d in enumerate(dets):
-                    box_d = _box_from_point(d.x, d.y)
-                    iou_cost = 1.0 - _iou(box_t, box_d)
-                    if t.team != d.team:
-                        # cross-team match should basically never happen;
-                        # penalize heavily rather than forbid outright
-                        # (VLM team classification can itself be wrong).
-                        iou_cost = min(1.0, iou_cost + 0.5)
-                    hist_sim = histogram_similarity(t.histogram, det_hists[j]) if t.histogram is not None else 0.5
+                track_ruler_x, track_ruler_y = preds[t.track_id]
+                
+                # estimate current bbox for IoU based on last known w,h and current predicted foot
+                if t.last_bbox_px is not None:
+                    _, _, tw, th = t.last_bbox_px
+                    tpx_foot_x, tpx_foot_y = geo.ruler_to_orig_px(track_ruler_x, track_ruler_y)
+                    track_bbox = (tpx_foot_x - tw/2, tpx_foot_y - th, tw, th)
+                else:
+                    track_bbox = (0, 0, 0, 0)
+                
+                for j, (d_ruler, d_px) in enumerate(dets):
+                    foot_rx, foot_ry = det_feet[j]
+                    dist = _dist(track_ruler_x, track_ruler_y, foot_rx, foot_ry)
+                    
+                    if dist > CFG.max_player_jump_norm:
+                        continue
+                    
+                    if t.last_bbox_px is not None:
+                        iou = _iou(track_bbox, tuple(d_px))
+                        dist_cost = 1.0 - iou
+                    else:
+                        dist_cost = min(1.0, dist / CFG.max_player_jump_norm)
+                        
+                    hist_sim = histogram_similarity(t.histogram, det_hists[j]) if t.histogram is not None and det_hists[j] is not None else 0.5
                     appearance_cost = 1.0 - hist_sim
+                    
+                    # No team cost anymore, appearance is primary discriminator for identity
                     cost[i, j] = (
-                        CFG.position_cost_weight * iou_cost
+                        CFG.position_cost_weight * dist_cost
                         + CFG.appearance_cost_weight * appearance_cost
                     )
             row_idx, col_idx = linear_sum_assignment(cost)
@@ -168,20 +232,23 @@ class TrackManager:
             if cost[r, c] > CFG.max_assignment_cost:
                 continue  # too costly to trust -- treat as no-match
             t = self.player_tracks[r]
-            d = dets[c]
-            # Teleportation gate: even a cheap-enough IoU/appearance match
-            # can be flat-out wrong if the VLM hallucinated a position far
-            # from where this track actually was. A real player can't
-            # cover more than max_player_jump_norm ruler-units between two
-            # keyframes, so anything past that is treated as noise -- the
-            # track just ages instead of getting its identity hijacked and
-            # teleported across the pitch.
+            
+            foot_rx, foot_ry = det_feet[c]
+            _, d_px = dets[c]
+            
             px, py = preds[t.track_id]
-            if _dist(px, py, d.x, d.y) > CFG.max_player_jump_norm:
+            if _dist(px, py, foot_rx, foot_ry) > CFG.max_player_jump_norm:
                 continue
-            t.correct(d.x, d.y)
-            t.histogram = det_hists[c]
-            t.history.append((frame_idx, d.x, d.y))
+            
+            t.correct(foot_rx, foot_ry)
+            if det_hists[c] is not None:
+                t.histogram = det_hists[c]
+            t.last_bbox_px = tuple(d_px)
+            t.history.append((frame_idx, foot_rx, foot_ry))
+            
+            # Record histogram in the team classifier for k-means tracking
+            team_classifier.record_track_histogram(t.track_id, det_hists[c], frame_idx)
+            
             matched_track_ids.add(t.track_id)
             matched_det_idxs.add(c)
 
@@ -189,39 +256,28 @@ class TrackManager:
         for t in self.player_tracks:
             if t.track_id not in matched_track_ids:
                 t.age_since_match += 1
-        self.player_tracks = [
-            t for t in self.player_tracks if t.age_since_match <= CFG.max_track_age_frames
-        ]
-        for j, d in enumerate(dets):
+                t.hit_streak = 0
+                
+        # Prune ALL dead tracks (missed_keyframes > 0)
+        alive_tracks = []
+        for t in self.player_tracks:
+            if t.age_since_match == 0:
+                alive_tracks.append(t)
+        self.player_tracks = alive_tracks
+        
+        for j, (d_ruler, d_px) in enumerate(dets):
             if j in matched_det_idxs:
                 continue
-            # Spawn sanity gate: an unmatched detection sitting right on
-            # top of a track that just failed to match (e.g. rejected by
-            # the teleport gate above, or lost this keyframe to appearance
-            # noise) is almost always that same player, not a new one.
-            # Without this, a single noisy keyframe can spawn a duplicate
-            # track next to an existing player, and the two flicker/fight
-            # for the marker on every subsequent keyframe.
-            if self._too_close_to_existing(d):
+            
+            foot_rx, foot_ry = det_feet[j]
+            if self._too_close_to_existing(foot_rx, foot_ry):
                 continue
-            new_track = self._spawn_player(frame_idx, d, det_hists[j])
+                
+            new_track = self._spawn_player(frame_idx, foot_rx, foot_ry, det_hists[j], d_px)
             self.player_tracks.append(new_track)
-
-        # 4. ball -- single object, no assignment problem, just correct-or-coast
-        if detections.ball is not None and detections.ball.visible:
-            if self.ball_track is None:
-                self.ball_track = self._spawn_ball(frame_idx, detections.ball)
-            else:
-                bpx, bpy = self.ball_track.predict()
-                # Same teleportation gate as players, just with a looser
-                # threshold since the ball legitimately moves faster.
-                if _dist(bpx, bpy, detections.ball.x, detections.ball.y) <= CFG.max_ball_jump_norm:
-                    self.ball_track.correct(detections.ball.x, detections.ball.y)
-                    self.ball_track.history.append((frame_idx, detections.ball.x, detections.ball.y))
-                # else: implausible jump -- predict() above already advanced
-                # the filter, so it simply coasts on prediction this keyframe.
-        elif self.ball_track is not None:
-            self.ball_track.predict()  # coast on prediction alone this keyframe
+            
+            if det_hists[j] is not None:
+                team_classifier.record_track_histogram(new_track.track_id, det_hists[j], frame_idx)
 
     # ---- non-keyframe update: pure prediction (paired with optical flow in pipeline.py) ----
 
@@ -229,59 +285,31 @@ class TrackManager:
         for t in self.player_tracks:
             x, y = t.predict()
             t.history.append((frame_idx, x, y))
-        if self.ball_track is not None:
-            x, y = self.ball_track.predict()
-            self.ball_track.history.append((frame_idx, x, y))
 
-    @staticmethod
-    def _dedup_detections(dets: list) -> list:
-        """Drops near-duplicate detections of the same team within one
-        keyframe's response, keeping the first of each cluster. Compares
-        same-team pairs only -- two different-team detections standing
-        close together is normal (players marking each other), not a
-        duplicate."""
-        kept: list = []
-        for d in dets:
-            if any(
-                d.team == k.team and _dist(d.x, d.y, k.x, k.y) <= CFG.duplicate_detection_distance_norm
-                for k in kept
-            ):
-                continue
-            kept.append(d)
-        return kept
-
-    def _too_close_to_existing(self, det) -> bool:
-        """True if `det` lands close enough to an existing (still-alive)
+    def _too_close_to_existing(self, foot_rx: float, foot_ry: float) -> bool:
+        """True if `foot_rx, foot_ry` lands close enough to an existing (still-alive)
         track that it should be treated as noise/duplicate rather than a
-        brand-new player -- e.g. a track that narrowly missed matching
-        this keyframe (appearance blip, or rejected by the teleport gate)
-        shouldn't get a duplicate spawned right next to it."""
+        brand-new player."""
         for t in self.player_tracks:
             tx, ty = t.current_xy()
-            if _dist(tx, ty, det.x, det.y) <= CFG.min_new_track_spawn_distance_norm:
+            if _dist(tx, ty, foot_rx, foot_ry) <= CFG.min_new_track_spawn_distance_norm:
                 return True
         return False
 
-    def _spawn_player(self, frame_idx: int, det, hist: np.ndarray) -> Track:
+    def _spawn_player(self, frame_idx: int, rx: float, ry: float, hist: Optional[np.ndarray], bbox_px: tuple) -> Track:
         kf = _new_kalman()
-        kf.statePost = np.array([[det.x], [det.y], [0], [0]], dtype=np.float32)
-        t = Track(track_id=next(self._next_id), team=det.team, kf=kf, histogram=hist)
-        t.history.append((frame_idx, det.x, det.y))
-        return t
-
-    def _spawn_ball(self, frame_idx: int, ball) -> Track:
-        kf = _new_kalman()
-        kf.statePost = np.array([[ball.x], [ball.y], [0], [0]], dtype=np.float32)
-        t = Track(track_id=0, team="ball", kf=kf)
-        t.history.append((frame_idx, ball.x, ball.y))
+        kf.statePost = np.array([[rx], [ry], [0], [0]], dtype=np.float32)
+        t = Track(track_id=next(self._next_id), kf=kf, histogram=hist, last_bbox_px=tuple(bbox_px))
+        t.history.append((frame_idx, rx, ry))
         return t
 
     def snapshot(self) -> dict:
-        """Current per-track ruler-space positions, for rendering / ball-possession logic."""
+        """Current per-track ruler-space positions, for rendering."""
+        ball_dict = {"xy": self.ball_position} if self.ball_position else None
         return {
             "players": [
-                {"track_id": t.track_id, "team": t.team, "xy": t.current_xy()}
-                for t in self.player_tracks
+                {"track_id": t.track_id, "xy": t.current_xy(), "team": t.team, "bbox_px": t.last_bbox_px}
+                for t in self.player_tracks if (t.hit_streak >= 2 or t.age_since_match == 0)
             ],
-            "ball": {"xy": self.ball_track.current_xy()} if self.ball_track else None,
+            "ball": ball_dict,
         }

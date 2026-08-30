@@ -26,26 +26,26 @@ from schema import FrameDetections, RESPONSE_JSON_SCHEMA, parse_vlm_response_ver
 
 logger = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """You are a sports-analytics vision system. You will be shown a single \
-video frame with a synthetic ruler drawn along its top and left edges, \
-numbered 0.0 to 10.0. Use ONLY this ruler to read off coordinates -- do \
-not guess pixel coordinates or invent your own scale.
+SYSTEM_PROMPT = """You are an expert sports vision analyzer. Your task is to extract bounding boxes for all active soccer players and the ball.
 
-For every player visible in the frame (inside the playing area, not the \
-ruler band itself), report their position as the point where their feet \
-meet the ground, read off the ruler (x = top ruler, y = left ruler). \
-Classify each player's team as "A" or "B" based on kit color -- pick \
-whichever two colors are the dominant, consistent OUTFIELD kit colors \
-across players; do not invent a third team. If someone's kit clearly \
-doesn't match either of those two colors (e.g. a goalkeeper in a third \
-kit, the referee, staff, ball boys), OMIT them from the players list \
-entirely rather than forcing them into "A" or "B".
+The image has a ruler overlay along the top (X-axis) and left (Y-axis) edges, both scaled 0 to 1000. Use these rulers to read precise coordinates.
 
-Report the ball's position the same way if visible. If the ball is not \
-visible (occluded, out of frame, or too small to localize confidently), \
-set visible to false and give your best-guess coordinates anyway.
+Strict constraints:
+* Pitch Isolation: Only detect players actively positioned on the green pitch. Completely ignore photographers, sideline staff, advertising boards, and people in the stands.
+* Ball Independence: Provide a single, independent bounding box for the soccer ball. It must not be grouped with a player. If the ball is not visible, set "ball" to null.
+* Player Independence: Do not group multiple players into a single bounding box. Every player must have their own unique bounding box.
+* Tight Cropping: Keep the player bounding boxes tightly cropped to their physical body to minimize the amount of background grass and shadow included.
+* Ratio Limits: Ensure the width is never greater than the height for any player bounding box.
+* Coordinates are integers on the 0-1000 ruler scale: [ymin, xmin, ymax, xmax].
 
-Respond only with the structured JSON. Do not include commentary."""
+Return ONLY valid JSON matching this schema — no markdown, no commentary:
+
+{
+  "players": [
+    {"label": "player", "box_2d": [ymin, xmin, ymax, xmax]}
+  ],
+  "ball": {"box_2d": [ymin, xmin, ymax, xmax]}
+}"""
 
 
 @dataclass
@@ -78,7 +78,7 @@ async def _call_once(client: httpx.AsyncClient, img_b64: str) -> dict:
                 {
                     "role": "user",
                     "content": [
-                        {"type": "text", "text": "Detect players, teams, and the ball in this frame."},
+                        {"type": "text", "text": "Detect each individual player and the ball in this frame. One box per person, one box for the ball."},
                         {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{img_b64}"}},
                     ],
                 },
@@ -142,3 +142,26 @@ async def detect_all_keyframes(
         ]
         results = await asyncio.gather(*tasks)
     return {r.frame_index: r for r in results}
+
+
+def get_openrouter_credits() -> tuple[Optional[float], Optional[float], Optional[float]]:
+    """Returns (total_credits, total_usage, credit_limit) or (None, None, None) on error."""
+    if CFG.use_mock_vlm or not CFG.openrouter_api_key:
+        return None, None, None
+    try:
+        import httpx
+        with httpx.Client() as client:
+            resp = client.get(
+                f"{CFG.openrouter_base_url}/auth/key",
+                headers={"Authorization": f"Bearer {CFG.openrouter_api_key}"},
+                timeout=5.0,
+            )
+            resp.raise_for_status()
+            data = resp.json().get("data", {})
+            limit = data.get("limit")
+            usage = data.get("usage")
+            limit_remaining = data.get("limit_remaining")
+            return limit, usage, limit_remaining
+    except Exception as e:
+        logger.warning(f"Could not fetch OpenRouter credits: {e}")
+        return None, None, None

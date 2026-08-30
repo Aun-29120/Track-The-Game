@@ -19,19 +19,21 @@ Frame-type split, as designed in the thinking cap:
 from __future__ import annotations
 import asyncio
 import logging
+import math
 import time
 from dataclasses import dataclass
 from typing import Optional
 
 import numpy as np
+import cv2
 from PIL import Image
 
 from config import CFG
 from ruler_overlay import add_ruler, RulerGeometry
 from vlm_client import detect_all_keyframes
 from tracker import TrackManager
-from team_identity import TeamIdentityResolver
-from optical_flow import propagate_points, to_gray
+from team_identity import TeamClassifier
+
 from renderer import render_frame
 from video_io import read_all_frames, write_video
 
@@ -100,71 +102,145 @@ def run_pipeline(input_path: str, output_path: str) -> RunStats:
     #    everything else propagates via optical flow (+Kalman predict to keep
     #    velocity estimates coherent).
     manager = TrackManager()
-    team_resolver = TeamIdentityResolver()
+    team_classifier = TeamClassifier()
     out_frames: list[np.ndarray] = []
-    prev_gray = None
-    # per-track pixel points carried by optical flow between keyframes
-    flow_points: dict[int, tuple[float, float]] = {}
-
+    # KCF trackers for each player, mapping track_id to cv2.TrackerKCF
+    kcf_trackers = {}
+    
     t_loop_start = time.time()
 
     for idx in range(n_frames):
         frame_bgr = frames[idx]
-        curr_gray = to_gray(frame_bgr)
+
 
         if idx in keyframe_idxs and results[idx].detections is not None:
-            detections = team_resolver.resolve(results[idx].detections, frame_bgr, geo)
-            manager.step_keyframe(idx, frame_bgr, geo, detections)
-            # reset flow points to the freshly corrected Kalman positions
-            flow_points = {
-                t.track_id: geo.ruler_to_orig_px(*t.current_xy())
-                for t in manager.player_tracks
-            }
-            if manager.ball_track is not None:
-                flow_points[0] = geo.ruler_to_orig_px(*manager.ball_track.current_xy())
-
+            raw_detections = results[idx].detections
+            
+            # Filter small/out-of-bounds/edge detections
+            frame_h, frame_w = frame_bgr.shape[:2]
+            EDGE_MARGIN_PX = 15
+            valid_players = []
+            for p in raw_detections.detections:
+                r_ymin, r_xmin, r_ymax, r_xmax = p.box_2d
+                px_xmin, px_ymin = geo.ruler_to_orig_px(r_xmin, r_ymin)
+                px_xmax, px_ymax = geo.ruler_to_orig_px(r_xmax, r_ymax)
+                
+                if px_xmax <= px_xmin or px_ymax <= px_ymin:
+                    continue
+                if (px_xmax - px_xmin) < 15 or (px_ymax - px_ymin) < 15:
+                    continue
+                
+                # Spatial edge filter: drop boxes whose center is within 15px of frame border
+                cx = (px_xmin + px_xmax) / 2.0
+                cy = (px_ymin + px_ymax) / 2.0
+                if cx < EDGE_MARGIN_PX or cx > (frame_w - EDGE_MARGIN_PX):
+                    continue
+                if cy < EDGE_MARGIN_PX or cy > (frame_h - EDGE_MARGIN_PX):
+                    continue
+                    
+                # Spatial Horizon & Pitch Filter (AND-gate logic)
+                foot_y = px_ymax
+                foot_x = cx
+                
+                # 1. Horizon test: drop if above 250px
+                if foot_y < 250:
+                    continue
+                    
+                # 2. Pitch test: drop if foot coordinates are not on valid green grass
+                crop_y0 = max(0, int(foot_y) - 2)
+                crop_y1 = min(frame_h, int(foot_y) + 3)
+                crop_x0 = max(0, int(foot_x) - 2)
+                crop_x1 = min(frame_w, int(foot_x) + 3)
+                
+                if crop_y1 > crop_y0 and crop_x1 > crop_x0:
+                    foot_patch = frame_bgr[crop_y0:crop_y1, crop_x0:crop_x1]
+                    hsv = cv2.cvtColor(foot_patch, cv2.COLOR_BGR2HSV)
+                    # H: 35-85, S: >40, V: >40
+                    grass_mask = cv2.inRange(hsv, (35, 41, 41), (85, 255, 255))
+                    if np.count_nonzero(grass_mask) == 0:
+                        continue
+                        
+                valid_players.append(p)
+            
+            raw_detections.detections = valid_players
+            manager.step_keyframe(idx, frame_bgr, geo, raw_detections, team_classifier)
+            
+            # reset KCF trackers to the freshly corrected Kalman positions
+            kcf_trackers = {}
+            for t in manager.player_tracks:
+                if t.last_bbox_px is None:
+                    continue
+                    
+                x, y, w, h = t.last_bbox_px
+                
+                # Clamp bounding box to image bounds
+                x1 = max(0, min(int(x), frame_w - 1))
+                y1 = max(0, min(int(y), frame_h - 1))
+                new_w = max(5, min(int(w), frame_w - x1))
+                new_h = max(5, min(int(h), frame_h - y1))
+                
+                # Initialize KCF tracker
+                tracker = cv2.TrackerKCF_create()
+                tracker.init(frame_bgr, (x1, y1, new_w, new_h))
+                kcf_trackers[t.track_id] = tracker
+                
         elif idx in keyframe_idxs and results[idx].detections is None:
             # failed keyframe -- fall back to prediction only, same as a non-keyframe
             manager.step_predict_only(idx)
 
         else:
-            # non-keyframe: optical flow carries points forward; Kalman
+            # non-keyframe: KCF updates player bounding boxes; Kalman
             # predict keeps state/uncertainty consistent for the next
             # keyframe's correction step.
-            if prev_gray is not None and flow_points:
-                ids = list(flow_points.keys())
-                pts = np.array([flow_points[i] for i in ids], dtype=np.float32)
-                new_pts, status = propagate_points(prev_gray, curr_gray, pts)
-                for i, tid in enumerate(ids):
-                    if status[i]:
-                        flow_points[tid] = (float(new_pts[i][0]), float(new_pts[i][1]))
-                    # if lost, we simply stop updating this point from flow;
-                    # Kalman's own prediction (below) becomes the fallback.
-
+            
             manager.step_predict_only(idx)
-            # nudge Kalman state toward the optical-flow-tracked position where available,
-            # so the two signals don't diverge silently between corrections.
-            for t in manager.player_tracks:
-                if t.track_id in flow_points and geo is not None:
-                    rx, ry = geo.orig_px_to_ruler(*flow_points[t.track_id])
-                    t.kf.statePost[0, 0] = rx
-                    t.kf.statePost[1, 0] = ry
-            # Same nudge for the ball (track_id 0) -- this was previously
-            # missing, so the ball only ever got a bare Kalman prediction
-            # between keyframes and never benefited from the optical-flow
-            # point that was already being computed for it above. That's
-            # why the ball marker was drifting/curving away from the real
-            # ball on non-keyframes instead of tracking it.
-            if (manager.ball_track is not None
-                    and manager.ball_track.track_id in flow_points
-                    and geo is not None):
-                rx, ry = geo.orig_px_to_ruler(*flow_points[manager.ball_track.track_id])
-                manager.ball_track.kf.statePost[0, 0] = rx
-                manager.ball_track.kf.statePost[1, 0] = ry
-
+            
+            # Update KCF trackers
+            for tid, tracker in list(kcf_trackers.items()):
+                prev_rx, prev_ry = None, None
+                for t in manager.player_tracks:
+                    if t.track_id == tid:
+                        prev_rx, prev_ry = t.current_xy()
+                        break
+                        
+                success, bbox = tracker.update(frame_bgr)
+                if success:
+                    x_min, y_min, w, h = bbox
+                    frame_width = frame_bgr.shape[1]
+                    frame_height = frame_bgr.shape[0]
+                    
+                    x_min = max(0, min(int(x_min), frame_width - 1))
+                    y_min = max(0, min(int(y_min), frame_height - 1))
+                    w = max(5, min(int(w), frame_width - x_min))
+                    h = max(5, min(int(h), frame_height - y_min))
+                    
+                    # Recover feet coordinate from tracked bounding box
+                    px = int(x_min + w / 2)
+                    py = int(y_min + h)
+                    
+                    displacement = 0.0
+                    if prev_rx is not None:
+                        prev_px, prev_py = geo.ruler_to_orig_px(prev_rx, prev_ry)
+                        displacement = math.hypot(px - prev_px, py - prev_py)
+                    
+                    if displacement > 35.0:
+                        success = False
+                    elif 0 < px < frame_bgr.shape[1] - 1 and 0 < py < frame_bgr.shape[0] - 1:
+                        # Find the corresponding track and correct its kalman filter
+                        for t in manager.player_tracks:
+                            if t.track_id == tid:
+                                rx, ry = geo.orig_px_to_ruler(px, py)
+                                t.correct(rx, ry)
+                                break
+                                
+                if not success:
+                    # KCF lost the track or moved too fast, rely purely on Kalman prediction
+                    del kcf_trackers[tid]
+            
+        # Apply temporal majority-vote smoothing to each track's team label
+        team_classifier.smooth_tracks(manager.player_tracks)
         snapshot = manager.snapshot()
         out_frames.append(render_frame(frame_bgr, geo, snapshot))
-        prev_gray = curr_gray
 
     t_loop = time.time() - t_loop_start
     logger.info("Tracking+render loop: %.1fs for %d frames (%.3fs/frame avg)",

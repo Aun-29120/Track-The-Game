@@ -63,10 +63,18 @@ def sample_torso_histogram(frame_bgr: np.ndarray, foot_x_px: float, foot_y_px: f
     return sample_histogram(frame_bgr, foot_x_px, torso_y)
 
 
-def histogram_similarity(h1: np.ndarray, h2: np.ndarray) -> float:
-    """Returns a similarity in [0, 1], 1 = identical. Uses correlation,
-    clipped to [0, 1] since anti-correlation isn't meaningful here."""
-    if h1 is None or h2 is None or h1.sum() == 0 or h2.sum() == 0:
-        return 0.5  # no information either way -- neutral, don't penalize or reward
-    corr = cv2.compareHist(h1.astype(np.float32), h2.astype(np.float32), cv2.HISTCMP_CORREL)
-    return float(max(0.0, min(1.0, corr)))
+def histogram_similarity(f1: np.ndarray, f2: np.ndarray) -> float:
+    """
+    Computes visual similarity between two CIELAB feature vectors.
+    Returns 1.0 for identical features, down to 0.0 for completely different.
+    """
+    if f1 is None or f2 is None or f1.size != 3 or f2.size != 3:
+        return 0.5
+
+    # Euclidean distance in CIELAB space.
+    # Max possible distance is ~255 (if mapped to 8-bit). We'll tune the scale.
+    dist = np.linalg.norm(f1 - f2)
+    
+    # Scale distance to similarity (tune threshold 100.0 empirically)
+    similarity = 1.0 - (dist / 100.0)
+    return float(max(0.0, min(1.0, similarity)))

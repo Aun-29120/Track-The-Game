@@ -17,7 +17,7 @@ class Config:
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     # model string as used by OpenRouter, e.g. "google/gemini-2.5-flash"
     model: str = os.getenv("VLM_MODEL", "google/gemini-3.5-flash-lite")
-    max_concurrent_vlm_calls: int = int(os.getenv("MAX_CONCURRENT_VLM_CALLS", "30"))
+    max_concurrent_vlm_calls: int = int(os.getenv("MAX_CONCURRENT_VLM_CALLS", "20"))
     vlm_timeout_s: float = float(os.getenv("VLM_TIMEOUT_S", "8"))
     vlm_max_retries: int = 2
 
@@ -31,16 +31,16 @@ class Config:
     use_mock_vlm: bool = os.getenv("USE_MOCK_VLM", "false").lower() == "true"
 
     # --- Ruler / grounding overlay ---
-    ruler_scale_max: float = 10.0   # ruler reads 0.0 -> 10.0 along each edge
+    ruler_scale_max: float = 1000.0   # ruler reads 0 -> 1000 along each edge
     ruler_thickness_px: int = 40    # thickness of the ruler band drawn on each edge
-    ruler_major_tick_every: float = 1.0
-    ruler_minor_tick_every: float = 0.5
+    ruler_major_tick_every: float = 100.0
+    ruler_minor_tick_every: float = 50.0
 
     # --- Tracking ---
     max_track_age_frames: int = 20       # drop a track if unmatched for this many frames
     max_assignment_cost: float = 0.75    # above this, treat as no-match (spawn new / age out)
-    kalman_process_noise: float = 1e-2
-    kalman_measurement_noise: float = 1e-1
+    kalman_process_noise: float = 1.25e-2
+    kalman_measurement_noise: float = 5e-2
 
     # Assignment cost weights (position/appearance/team), from the error-report
     # fix: replaced fake point-box IoU with real point-distance cost.
@@ -51,16 +51,24 @@ class Config:
     # Movement/teleportation gates: reject a VLM measurement outright if it's
     # implausibly far from the Kalman prediction, rather than letting one bad
     # detection hijack an established track's identity.
-    max_player_jump_norm: float = 1.5    # ruler units; a player can't plausibly move further than this between keyframes
-    max_ball_jump_norm: float = 2.5      # ball moves faster than players, so a looser gate
+    max_player_jump_norm: float = 150.0    # ruler units; a player can't plausibly move further than this between keyframes
+    max_ball_jump_norm: float = 250.0      # ball moves faster than players, so a looser gate
 
     # New-track spawn sanity gates: an unmatched VLM detection shouldn't
     # automatically become a persistent identity.
-    min_new_track_spawn_distance_norm: float = 0.5  # too close to an existing track -> treat as noise/duplicate, not a new player
+    min_new_track_spawn_distance_norm: float = 50.0  # too close to an existing track -> treat as noise/duplicate, not a new player
     min_team_confidence_margin: float = 0.05         # ambiguous team appearance -> don't spawn
 
-    # Duplicate-detection dedup within a single keyframe's response.
-    duplicate_detection_distance_norm: float = 0.2
+    # Bounding box sizing for KCF tracking (perspective scaled based on Y)
+    # y=0 is far side of pitch, y=height is near side.
+    # Player bounding box height is: base_player_h_px + (y / frame_h) * perspective_scale_h_px
+    base_player_w_px: float = 30.0
+    base_player_h_px: float = 60.0
+    perspective_scale_w_px: float = 20.0
+    perspective_scale_h_px: float = 40.0
+    
+    # duplicate detection dedup within a single keyframe's response.
+    duplicate_detection_distance_norm: float = 20.0
 
     # --- Appearance sampling (torso, not feet) ---
     torso_offset_frac_height: float = 0.06   # fraction of frame height to sample above the foot point
@@ -72,7 +80,7 @@ class Config:
 
     # --- Rendering ---
     marker_radius_px: int = 14
-    on_ball_distance_threshold_norm: float = 0.6  # in ruler units; nearest player within this counts as "on the ball"
+    on_ball_distance_threshold_norm: float = 60.0  # in ruler units; nearest player within this counts as "on the ball"
 
     # --- Budget / latency targets (from the brief, for the report) ---
     target_latency_s: float = 15.0

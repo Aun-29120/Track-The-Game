@@ -43,20 +43,40 @@ def _find_blobs(frame_bgr: np.ndarray, target_bgr: tuple[int, int, int]) -> list
 
 def mock_detect_frame(frame_bgr: np.ndarray, geo: RulerGeometry) -> FrameDetections:
     players = []
-    for i, (px, py) in enumerate(_find_blobs(frame_bgr, TEAM_A_BGR)):
-        rx, ry = geo.orig_px_to_ruler(px, py)
-        players.append(PlayerDetection(frame_label=f"a{i}", x=rx, y=ry, team="A"))
-    for i, (px, py) in enumerate(_find_blobs(frame_bgr, TEAM_B_BGR)):
-        rx, ry = geo.orig_px_to_ruler(px, py)
-        players.append(PlayerDetection(frame_label=f"b{i}", x=rx, y=ry, team="B"))
+    
+    # helper to mock bounding boxes
+    def _add_players(centers, label_prefix):
+        for i, (px, py) in enumerate(centers):
+            # mock bounding box of 40x80 pixels around the center
+            ymin = max(0, py - 40)
+            xmin = max(0, px - 20)
+            ymax = min(frame_bgr.shape[0], py + 40)
+            xmax = min(frame_bgr.shape[1], px + 20)
+            
+            # convert to ruler coordinates
+            rx_min, ry_min = geo.orig_px_to_ruler(xmin, ymin)
+            rx_max, ry_max = geo.orig_px_to_ruler(xmax, ymax)
+            
+            box_2d = [ry_min, rx_min, ry_max, rx_max]
+            players.append(PlayerDetection(label="player", box_2d=box_2d))
 
-    ball_blobs = _find_blobs(frame_bgr, BALL_BGR)
-    ball = None
-    if ball_blobs:
-        rx, ry = geo.orig_px_to_ruler(*ball_blobs[0])
-        ball = BallDetection(x=rx, y=ry, visible=True)
+    _add_players(_find_blobs(frame_bgr, TEAM_A_BGR), "a")
+    _add_players(_find_blobs(frame_bgr, TEAM_B_BGR), "b")
 
-    return FrameDetections(players=players, ball=ball)
+    # Ball detection
+    ball_det = None
+    ball_centers = _find_blobs(frame_bgr, BALL_BGR)
+    if ball_centers:
+        bpx, bpy = ball_centers[0]
+        bymin = max(0, bpy - 10)
+        bxmin = max(0, bpx - 10)
+        bymax = min(frame_bgr.shape[0], bpy + 10)
+        bxmax = min(frame_bgr.shape[1], bpx + 10)
+        brx_min, bry_min = geo.orig_px_to_ruler(bxmin, bymin)
+        brx_max, bry_max = geo.orig_px_to_ruler(bxmax, bymax)
+        ball_det = BallDetection(box_2d=[bry_min, brx_min, bry_max, brx_max])
+
+    return FrameDetections(detections=players, ball=ball_det)
 
 
 def detect_all_keyframes_mock(
