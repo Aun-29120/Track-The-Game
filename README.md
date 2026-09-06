@@ -1,67 +1,60 @@
+```markdown
 # Track the Game
 
-Annotates 30s of game footage: every player marked, teams distinguished by color, the ball highlighted, and whoever's on the ball marked differently — under $1 and 15–25s of processing per finished video.
+**Author:** Muhammad Aun Haider Bilgrami  
+**Student ID:** 29120
 
-## How it works
+A fully automated video processing pipeline that annotates 30-second sports clips with per-player team markers, a ball highlight, and a dynamic possession indicator[cite: 1]. Developed for the Zeta Solutions Internship Programme, this system bypasses classical computer vision heuristics and relies entirely on Vision-Language Models (VLMs) for visual perception[cite: 1, 8].
 
-* **1. Input Ingestion & Sparse Keyframe Sampling:** Extracts frames at a sparse interval (`KEYFRAME_INTERVAL = 8` or `16`) to drastically reduce VLM API costs (keeping expenses under $1.00 per video) and slash total execution time.
-* **2. Synthetic Ruler Grounding:** Overlays a dynamic 0–1000 integer coordinate grid (`src/ruler_overlay.py`) on selected keyframes, allowing the Vision-Language Model to read precise spatial coordinates instead of guessing raw pixels.
-* **3. Asynchronous VLM Perception:** Dispatches ruled keyframe images concurrently via OpenRouter (`src/vlm_client.py`) with strict rate limiting, returning structured JSON (`src/schema.py`) containing raw bounding boxes, team kit classifications, and ball coordinates.
-* **4. Multi-Gate Spatial & Pitch Filtering:** Eliminates false positives, stadium ad-board artifacts, and spectator ghosting via a strict 15-pixel edge margin and a dual-gate pitch horizon/HSV green-turf filter (`Hue: 35–85`) (`src/pipeline.py`).
-* **5. Dynamic CIELAB Team Clustering & Identity Locking:** Avoids brittle static thresholds by accumulating upper-torso color samples over the first 45 frames, stripping out turf, converting to CIELAB space, and running unsupervised $k=2$ K-Means clustering (`src/team_identity.py`). Features a 5-frame lock streak to prevent mid-play team flipping and a Euclidean distance threshold ($\Delta E > 35.0$) to route referees into an "unknown" pool.
-* **6. Hybrid Continuity (Kalman + KCF + Hungarian Matching):** Combines Hungarian assignment with per-player Kalman filters on keyframes (`src/tracker.py`), while Kernelized Correlation Filters (KCF) propagate player bounding boxes frame-by-frame between keyframes with high velocity stability.
-* **7. Possession Logic & Rendering:** Calculates ball possession in native pixel space ($< 50\text{px}$) and renders clean FIFA-style ellipse markers directly onto original, unwarped video frames (`src/renderer.py`).
+## System Architecture
 
-See `thinking_cap.txt` for the full design reasoning, options considered and rejected, and known limitations.
+The pipeline processes video in five sequential stages to balance speed, cost, and tracking accuracy:
 
-## Setup
+*   **Video Decoding**: Uses `PyAV` with multithreading (`stream.thread_type = "AUTO"`) for high-speed extraction, automatically correcting rotation metadata and resampling the footage to exactly 30.0 fps[cite: 12].
+*   **Spatial Grounding**: A synthetic 40-pixel white band is added to the top and left edges of the frame[cite: 10]. A ruler scaling from 0 to 1000 is drawn onto these borders, allowing the VLM to read exact spatial coordinates rather than hallucinating pixel locations[cite: 5, 10].
+*   **Sparse VLM Perception**: To maintain cost limits, only keyframes (every 8 or 16 frames) are analyzed[cite: 5]. Images are downscaled to a maximum of 1280 pixels and dispatched concurrently (up to 64 simultaneous requests) via `httpx.AsyncClient` to the OpenRouter API[cite: 5, 13].
+*   **Temporal Interpolation**: A Hungarian algorithm (`scipy.optimize.linear_sum_assignment`) logically links independent keyframe detections into continuous tracks based on spatial proximity, jersey number rewards, and team color penalties[cite: 5, 7]. A monotonic spline (`PchipInterpolator`) smoothly calculates movement during the skipped frames[cite: 7].
+*   **Hardware Rendering**: OpenCV natively renders team-colored ellipses at the players' feet[cite: 9]. Possession is assigned to the nearest player within a 50-pixel radius of the ball, indicated by an additional white ring[cite: 9]. The final video is encoded using macOS Apple Silicon hardware acceleration (`h264_videotoolbox`)[cite: 12].
+
+## Setup & Installation
+
+Create a `.env` file in the root directory to define your API credentials and configuration parameters[cite: 4, 5]:
+
+```env
+OPENROUTER_API_KEY="sk-or-v1-..."
+VLM_MODEL="google/gemini-3.5-flash-lite"
+MAX_CONCURRENT_VLM_CALLS=64
+KEYFRAME_INTERVAL=8
+
+```
+
+Note: To run a dry-test without spending real API budget, you can set `USE_MOCK_VLM=true` to test the pipeline logic via a synthetic color-blob CV script.
+
+## Usage
+
+Execute the pipeline through the central command-line interface by providing the input and output file paths:
 
 ```bash
-pip install -r requirements.txt
-cp .env.example .env   # then fill in OPENROUTER_API_KEY
+python scripts/run_pipeline.py --in data/clips/clip1.mp4 --out data/output/clip1_annotated.mp4
 
 ```
 
-## Smoke-test the pipeline (no API cost)
+## Benchmarks & Performance Limitations
 
-Generates a synthetic clip and runs the full pipeline against it using a color-blob mock detector instead of a real VLM call — validates that tracking, KCF propagation, and rendering all work mechanically before spending real budget on real footage.
+The system was evaluated against strict project constraints: a target processing latency of under 15 seconds (25 seconds maximum ceiling) and a budget of under $1.00 per finished video.
 
-```bash
-python scripts/make_test_clip.py --out data/clips/synthetic_test.mp4
-USE_MOCK_VLM=true python scripts/run_pipeline.py \
-    --in data/clips/synthetic_test.mp4 \
-    --out data/output/synthetic_test_annotated.mp4
+| Clip | Frames Processed | Keyframes Sent | Interval | Elapsed (s) | Cost ($) |
+| --- | --- | --- | --- | --- | --- |
+| Clip 1 | 892 | 112 | 8 | 49.7 | 0.3307 |
+| Clip 2 | 919 | 115 | 8 | 56.8 | 0.4499 |
+| Clip 3 | 948 | 119 | 8 | 52.8 | 0.4323 |
+| Clip 4 | 907 | 114 | 8 | 51.7 | 0.3854 |
+| Clip 5 | 901 | 57 | 16 | 62.2 | 0.1773 |
 
-```
+While the pipeline successfully achieved the strict cost limit (averaging $0.33 - $0.45), processing times remain near 50 seconds, exceeding the 25-second maximum target. Extensive local optimizations—including hardware-accelerated video encoding, asynchronous threading, and connection pool scaling—cut the initial baseline time in half. However, the system is ultimately bottlenecked by the physical limits of cloud API architecture.
 
-## Run on a real clip
-
-```bash
-python scripts/run_pipeline.py \
-    --in data/clips/clip1.mp4 \
-    --out data/output/clip1_annotated.mp4
+Because the pipeline dispatches dozens of keyframes concurrently, the total execution time is strictly dictated by the single slowest network response in that batch (tail-latency). Ablation testing (Clip 5) confirms this: halving the total number of API requests successfully reduced the cost but did not decrease the overall processing time. Achieving a sub-15-second run is currently constrained by external cloud queueing, rather than local compute inefficiency.
 
 ```
-
-Key tunables live in `src/config.py` / `.env`: `KEYFRAME_INTERVAL`, `VLM_MODEL`, tracker cost weights. These are the ablation variables referenced in the report.
-
-## Project layout
-
-```
-src/
-    config.py           all tunables in one place
-    schema.py           VLM structured-output schema + validation
-    ruler_overlay.py    grounding overlay for VLM keyframes
-    vlm_client.py       async OpenRouter calls, concurrency-limited
-    mock_vlm.py         TEST-ONLY color-blob stand-in, no real VLM
-    tracker.py          Kalman filter + Hungarian assignment
-    appearance.py       color histogram for occlusion tiebreaking
-    team_identity.py    dynamic CIELAB K-Means clustering + streak locking
-    renderer.py         Pillow/OpenCV drawing + ball-possession logic
-    pipeline.py         orchestrates the above end to end
-    video_io.py         read/write video
-scripts/
-    make_test_clip.py   synthetic clip generator
-    run_pipeline.py     CLI entrypoint
 
 ```
