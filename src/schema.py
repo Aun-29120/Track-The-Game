@@ -21,13 +21,6 @@ from pydantic import BaseModel, Field
 RULER_MAX = 1000.0
 COORD_TOLERANCE = 50.0  # ruler units of allowed overshoot
 
-# Sanity limits for individual player boxes (in ruler units)
-MAX_PLAYER_BOX_WIDTH = 250.0
-MAX_PLAYER_BOX_HEIGHT = 500.0
-
-TeamLabel = Literal["A", "B"]
-
-
 def _sanitize_coord(v: object) -> Optional[float]:
     """Clips mild overshoot into [0, RULER_MAX]; returns None (caller should drop the detection)
     for anything beyond COORD_TOLERANCE."""
@@ -39,10 +32,11 @@ def _sanitize_coord(v: object) -> Optional[float]:
         return round(min(max(v, 0.0), RULER_MAX), 3)
     return None
 
-
 class PlayerDetection(BaseModel):
     label: Literal["player"]
     box_2d: list[float] = Field(..., min_length=4, max_length=4)  # [ymin, xmin, ymax, xmax]
+    team: str
+    jersey_number: Optional[str] = None
 
 
 class BallDetection(BaseModel):
@@ -52,20 +46,48 @@ class BallDetection(BaseModel):
 class FrameDetections(BaseModel):
     detections: list[PlayerDetection] = Field(default_factory=list)
     ball: Optional[BallDetection] = None
+    pitch_boundary: Optional[list[tuple[float, float]]] = None
 
 
-RESPONSE_JSON_SCHEMA = {
-    "name": "frame_detections",
-    "strict": True,
-    "schema": {
-        "type": "object",
-        "properties": {
-            "players": {
-                "type": "array",
-                "items": {
-                    "type": "object",
+def get_response_json_schema(team_a_color: str, team_b_color: str) -> dict:
+    return {
+        "name": "frame_detections",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "pitch_boundary": {
+                    "type": ["array", "null"],
+                    "description": "A list of [y, x] coordinate pairs that trace the topmost visible boundary of the green playing surface (e.g., the touchline or goal-line) ordered from left to right along the X-axis. Include 3 to 5 points. If the boundary is a straight horizontal line, 2 points are sufficient.",
+                    "items": {
+                        "type": "array",
+                        "items": {"type": "number"},
+                        "minItems": 2,
+                        "maxItems": 2
+                    }
+                },
+                "players": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "label": {"type": "string", "enum": ["player"]},
+                            "team": {"type": "string", "enum": [f"Team {team_a_color}", f"Team {team_b_color}", "Gray"]},
+                            "jersey_number": {"type": ["string", "null"]},
+                            "box_2d": {
+                                "type": "array",
+                                "items": {"type": "number"},
+                                "minItems": 4,
+                                "maxItems": 4
+                            }
+                        },
+                        "required": ["label", "box_2d", "team"],
+                        "additionalProperties": False,
+                    },
+                },
+                "ball": {
+                    "type": ["object", "null"],
                     "properties": {
-                        "label": {"type": "string", "enum": ["player"]},
                         "box_2d": {
                             "type": "array",
                             "items": {"type": "number"},
@@ -73,28 +95,16 @@ RESPONSE_JSON_SCHEMA = {
                             "maxItems": 4
                         }
                     },
-                    "required": ["label", "box_2d"],
+                    "required": ["box_2d"],
                     "additionalProperties": False,
-                },
+                }
             },
-            "ball": {
-                "type": ["object", "null"],
-                "properties": {
-                    "box_2d": {
-                        "type": "array",
-                        "items": {"type": "number"},
-                        "minItems": 4,
-                        "maxItems": 4
-                    }
-                },
-                "required": ["box_2d"],
-                "additionalProperties": False,
-            }
+            "required": ["pitch_boundary", "players", "ball"],
+            "additionalProperties": False,
         },
-        "required": ["players", "ball"],
-        "additionalProperties": False,
-    },
-}
+    }
+
+
 
 
 def parse_vlm_response(raw_json: str) -> Optional[FrameDetections]:
@@ -136,21 +146,17 @@ def parse_vlm_response_verbose(raw_json: str) -> tuple[Optional[FrameDetections]
             dropped_coord += 1
             continue
         
-        # Box sanity filter: reject macro-boxes
         box_w = xmax - xmin
         box_h = ymax - ymin
         if box_w <= 0 or box_h <= 0:
             dropped_coord += 1
             continue
-        if box_w > MAX_PLAYER_BOX_WIDTH or box_h > MAX_PLAYER_BOX_HEIGHT:
-            dropped_macro += 1
-            continue
-        # Reject landscape boxes (players are always portrait)
-        if box_w > box_h:
-            dropped_macro += 1
-            continue
             
-        kept.append({"label": "player", "box_2d": [ymin, xmin, ymax, xmax]})
+        team = str(p.get("team", "Gray"))
+        jersey = p.get("jersey_number")
+        if jersey is not None:
+            jersey = str(jersey)
+        kept.append({"label": "player", "box_2d": [ymin, xmin, ymax, xmax], "team": team, "jersey_number": jersey})
         
     # --- Parse ball ---
     ball_parsed = None
@@ -165,10 +171,28 @@ def parse_vlm_response_verbose(raw_json: str) -> tuple[Optional[FrameDetections]
             if all(c is not None for c in (bymin, bxmin, bymax, bxmax)):
                 ball_parsed = BallDetection(box_2d=[bymin, bxmin, bymax, bxmax])
 
+    # --- Parse pitch_boundary ---
+    pitch_boundary = None
+    if "pitch_boundary" in raw and isinstance(raw["pitch_boundary"], list):
+        pts = []
+        for pt in raw["pitch_boundary"]:
+            if isinstance(pt, list) and len(pt) == 2:
+                y = _sanitize_coord(pt[0])
+                x = _sanitize_coord(pt[1])
+                if y is not None and x is not None:
+                    pts.append((y, x))
+        
+        # Defensive parsing
+        if len(pts) >= 1:
+            # Sort by x ascending
+            pts.sort(key=lambda p: p[1])
+            pitch_boundary = pts
+
     try:
         parsed = FrameDetections(
             detections=[PlayerDetection(**p) for p in kept[:30]],
             ball=ball_parsed,
+            pitch_boundary=pitch_boundary,
         )
     except Exception as e:
         snippet = raw_json[:300].replace("\n", " ")

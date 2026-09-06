@@ -17,12 +17,12 @@ class Config:
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     # model string as used by OpenRouter, e.g. "google/gemini-2.5-flash"
     model: str = os.getenv("VLM_MODEL", "google/gemini-3.5-flash-lite")
-    max_concurrent_vlm_calls: int = int(os.getenv("MAX_CONCURRENT_VLM_CALLS", "20"))
-    vlm_timeout_s: float = float(os.getenv("VLM_TIMEOUT_S", "8"))
+    max_concurrent_vlm_calls: int = int(os.getenv("MAX_CONCURRENT_VLM_CALLS", "64"))
+    vlm_timeout_s: float = float(os.getenv("VLM_TIMEOUT_S", "20"))
     vlm_max_retries: int = 2
 
     # --- Sampling ---
-    keyframe_interval: int = int(os.getenv("KEYFRAME_INTERVAL", "8"))  # every Nth frame goes to the VLM
+    keyframe_interval: int = int(os.getenv("KEYFRAME_INTERVAL", "16"))  # every Nth frame goes to the VLM
 
     # --- Testing ---
     # When true, pipeline.py uses mock_vlm.py (color-blob CV) instead of a
@@ -37,43 +37,19 @@ class Config:
     ruler_minor_tick_every: float = 50.0
 
     # --- Tracking ---
-    max_track_age_frames: int = 20       # drop a track if unmatched for this many frames
-    max_assignment_cost: float = 0.75    # above this, treat as no-match (spawn new / age out)
-    kalman_process_noise: float = 1.25e-2
-    kalman_measurement_noise: float = 5e-2
-
-    # Assignment cost weights (position/appearance/team), from the error-report
-    # fix: replaced fake point-box IoU with real point-distance cost.
-    position_cost_weight: float = 0.65
-    appearance_cost_weight: float = 0.20
-    team_cost_weight: float = 0.15
-
     # Movement/teleportation gates: reject a VLM measurement outright if it's
-    # implausibly far from the Kalman prediction, rather than letting one bad
-    # detection hijack an established track's identity.
+    # implausibly far from the last known position.
     max_player_jump_norm: float = 150.0    # ruler units; a player can't plausibly move further than this between keyframes
     max_ball_jump_norm: float = 250.0      # ball moves faster than players, so a looser gate
+    max_interpolation_gap_frames: int = 24 # max gap (in frames) to interpolate across. gaps larger than this are left blank.
 
-    # New-track spawn sanity gates: an unmatched VLM detection shouldn't
-    # automatically become a persistent identity.
-    min_new_track_spawn_distance_norm: float = 50.0  # too close to an existing track -> treat as noise/duplicate, not a new player
-    min_team_confidence_margin: float = 0.05         # ambiguous team appearance -> don't spawn
+    # Assignment costs for identity (added to spatial distance)
+    jersey_match_reward: float = 1000.0
+    jersey_mismatch_penalty: float = 20.0
+    team_mismatch_penalty: float = 50.0
 
-    # Bounding box sizing for KCF tracking (perspective scaled based on Y)
-    # y=0 is far side of pitch, y=height is near side.
-    # Player bounding box height is: base_player_h_px + (y / frame_h) * perspective_scale_h_px
-    base_player_w_px: float = 30.0
-    base_player_h_px: float = 60.0
-    perspective_scale_w_px: float = 20.0
-    perspective_scale_h_px: float = 40.0
-    
     # duplicate detection dedup within a single keyframe's response.
     duplicate_detection_distance_norm: float = 20.0
-
-    # --- Appearance sampling (torso, not feet) ---
-    torso_offset_frac_height: float = 0.06   # fraction of frame height to sample above the foot point
-    saturation_mask_threshold: int = 40      # HSV saturation below this is treated as background (grass/pitch) and masked out
-    team_prototype_ema_alpha: float = 0.1    # how fast persistent team-color prototypes adapt to lighting changes
 
     # --- Debugging ---
     debug_logging: bool = os.getenv("DEBUG_LOGGING", "false").lower() == "true"

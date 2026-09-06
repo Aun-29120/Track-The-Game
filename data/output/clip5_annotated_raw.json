@@ -1,0 +1,10422 @@
+{
+  "0": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          217.0,
+          18.0,
+          307.0,
+          46.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          273.0,
+          364.0,
+          363.0,
+          388.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          284.0,
+          576.0,
+          384.0,
+          597.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          330.0,
+          778.0,
+          437.0,
+          803.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          379.0,
+          87.0,
+          492.0,
+          126.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          564.0,
+          83.0,
+          689.0,
+          125.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          591.0,
+          248.0,
+          735.0,
+          286.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          591.0,
+          579.0,
+          735.0,
+          632.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          571.0,
+          626.0,
+          692.0,
+          666.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          811.0,
+          189.0,
+          997.0,
+          230.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        712.0,
+        578.0,
+        729.0,
+        589.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        174.0,
+        5.0
+      ],
+      [
+        174.0,
+        381.0
+      ],
+      [
+        185.0,
+        999.0
+      ]
+    ]
+  },
+  "128": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          335.0,
+          88.0,
+          423.0,
+          120.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          287.0,
+          153.0,
+          375.0,
+          175.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          223.0,
+          239.0,
+          292.0,
+          253.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          271.0,
+          676.0,
+          355.0,
+          706.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          489.0,
+          237.0,
+          606.0,
+          277.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          535.0,
+          144.0,
+          658.0,
+          185.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          468.0,
+          436.0,
+          584.0,
+          463.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          394.0,
+          615.0,
+          493.0,
+          644.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          433.0,
+          672.0,
+          549.0,
+          705.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          560.0,
+          171.0,
+          694.0,
+          203.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          500.0,
+          614.0,
+          613.0,
+          649.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          507.0,
+          638.0,
+          606.0,
+          673.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          546.0,
+          695.0,
+          664.0,
+          730.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          648.0,
+          252.0,
+          796.0,
+          290.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          676.0,
+          342.0,
+          831.0,
+          384.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          630.0,
+          563.0,
+          739.0,
+          611.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          609.0,
+          589.0,
+          729.0,
+          629.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        722.0,
+        550.0,
+        743.0,
+        561.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        230.0,
+        19.0
+      ],
+      [
+        230.0,
+        521.0
+      ],
+      [
+        230.0,
+        981.0
+      ]
+    ]
+  },
+  "256": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          181.0,
+          488.0,
+          244.0,
+          506.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          249.0,
+          442.0,
+          338.0,
+          462.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          287.0,
+          307.0,
+          375.0,
+          330.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          321.0,
+          169.0,
+          434.0,
+          201.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          517.0,
+          218.0,
+          650.0,
+          252.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          472.0,
+          250.0,
+          599.0,
+          279.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          486.0,
+          389.0,
+          610.0,
+          418.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          542.0,
+          365.0,
+          672.0,
+          401.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          638.0,
+          501.0,
+          783.0,
+          541.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          652.0,
+          542.0,
+          800.0,
+          574.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          648.0,
+          597.0,
+          775.0,
+          626.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          640.0,
+          656.0,
+          800.0,
+          692.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          636.0,
+          560.0,
+          661.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          220.0,
+          878.0,
+          313.0,
+          895.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          360.0,
+          868.0,
+          464.0,
+          893.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          384.0,
+          792.0,
+          500.0,
+          814.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          463.0,
+          772.0,
+          587.0,
+          804.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          510.0,
+          872.0,
+          637.0,
+          909.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        775.0,
+        688.0,
+        794.0,
+        701.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        169.0,
+        19.0
+      ],
+      [
+        169.0,
+        981.0
+      ]
+    ]
+  },
+  "384": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          198.0,
+          421.0,
+          260.0,
+          439.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          212.0,
+          538.0,
+          256.0,
+          558.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          222.0,
+          517.0,
+          304.0,
+          535.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          318.0,
+          546.0,
+          414.0,
+          566.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          350.0,
+          413.0,
+          442.0,
+          448.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          398.0,
+          303.0,
+          508.0,
+          332.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          448.0,
+          212.0,
+          560.0,
+          258.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          351.0,
+          608.0,
+          381.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          464.0,
+          511.0,
+          592.0,
+          547.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          512.0,
+          587.0,
+          634.0,
+          626.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          496.0,
+          756.0,
+          626.0,
+          796.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          522.0,
+          809.0,
+          650.0,
+          854.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          608.0,
+          839.0,
+          752.0,
+          891.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          646.0,
+          258.0,
+          794.0,
+          307.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          708.0,
+          137.0,
+          862.0,
+          191.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          758.0,
+          977.0,
+          902.0,
+          1000.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          270.0,
+          981.0,
+          366.0,
+          1000.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        678.0,
+        452.0,
+        700.0,
+        464.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        210.0,
+        19.0
+      ],
+      [
+        220.0,
+        524.0
+      ],
+      [
+        230.0,
+        998.0
+      ]
+    ]
+  },
+  "512": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          103.0,
+          492.0,
+          172.0,
+          510.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          139.0,
+          523.0,
+          227.0,
+          542.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          243.0,
+          633.0,
+          347.0,
+          656.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          277.0,
+          441.0,
+          377.0,
+          466.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          316.0,
+          344.0,
+          439.0,
+          372.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          366.0,
+          248.0,
+          485.0,
+          279.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          432.0,
+          212.0,
+          569.0,
+          243.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          371.0,
+          627.0,
+          493.0,
+          668.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          430.0,
+          517.0,
+          562.0,
+          547.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          447.0,
+          719.0,
+          582.0,
+          751.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          804.0,
+          561.0,
+          831.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          631.0,
+          466.0,
+          800.0,
+          508.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          629.0,
+          498.0,
+          796.0,
+          532.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          576.0,
+          661.0,
+          718.0,
+          715.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          666.0,
+          730.0,
+          824.0,
+          768.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          722.0,
+          654.0,
+          807.0,
+          696.0
+        ],
+        "team": "Team red",
+        "jersey_number": "66"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        764.0,
+        696.0,
+        786.0,
+        708.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        139.0,
+        19.0
+      ],
+      [
+        138.0,
+        981.0
+      ]
+    ]
+  },
+  "640": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          112.0,
+          481.0,
+          196.0,
+          500.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          267.0,
+          319.0,
+          386.0,
+          337.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          239.0,
+          407.0,
+          340.0,
+          428.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          223.0,
+          577.0,
+          323.0,
+          603.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          337.0,
+          194.0,
+          453.0,
+          234.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          421.0,
+          350.0,
+          549.0,
+          381.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          398.0,
+          471.0,
+          532.0,
+          510.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          414.0,
+          654.0,
+          544.0,
+          689.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          445.0,
+          198.0,
+          579.0,
+          243.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          623.0,
+          327.0,
+          786.0,
+          365.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          655.0,
+          429.0,
+          836.0,
+          459.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          619.0,
+          652.0,
+          762.0,
+          718.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          664.0,
+          626.0,
+          825.0,
+          658.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          609.0,
+          790.0,
+          755.0,
+          821.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        789.0,
+        626.0,
+        805.0,
+        637.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        109.0,
+        19.0
+      ],
+      [
+        109.0,
+        990.0
+      ]
+    ]
+  },
+  "768": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          105.0,
+          414.0,
+          185.0,
+          434.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          232.0,
+          243.0,
+          342.0,
+          265.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          226.0,
+          354.0,
+          321.0,
+          375.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          217.0,
+          456.0,
+          316.0,
+          477.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          319.0,
+          227.0,
+          434.0,
+          252.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          353.0,
+          532.0,
+          389.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          431.0,
+          456.0,
+          567.0,
+          483.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          378.0,
+          608.0,
+          502.0,
+          633.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          483.0,
+          76.0,
+          627.0,
+          111.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          561.0,
+          139.0,
+          713.0,
+          190.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          606.0,
+          465.0,
+          747.0,
+          535.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          705.0,
+          526.0,
+          843.0,
+          575.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          718.0,
+          539.0,
+          856.0,
+          595.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          619.0,
+          858.0,
+          767.0,
+          889.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          715.0,
+          19.0,
+          915.0,
+          43.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        837.0,
+        513.0,
+        861.0,
+        528.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        93.0,
+        21.0
+      ],
+      [
+        100.0,
+        574.0
+      ],
+      [
+        113.0,
+        999.0
+      ]
+    ]
+  },
+  "896": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          247.0,
+          153.0,
+          331.0,
+          181.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          656.0,
+          308.0,
+          810.0,
+          349.0
+        ],
+        "team": "Team red",
+        "jersey_number": "11"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          546.0,
+          469.0,
+          679.0,
+          506.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          614.0,
+          671.0,
+          775.0,
+          710.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          595.0,
+          741.0,
+          741.0,
+          772.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          518.0,
+          804.0,
+          655.0,
+          847.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          386.0,
+          856.0,
+          502.0,
+          898.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          328.0,
+          851.0,
+          424.0,
+          868.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          291.0,
+          903.0,
+          387.0,
+          932.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        773.0,
+        338.0,
+        793.0,
+        350.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        142.0,
+        19.0
+      ],
+      [
+        144.0,
+        421.0
+      ],
+      [
+        143.0,
+        792.0
+      ],
+      [
+        145.0,
+        999.0
+      ]
+    ]
+  },
+  "16": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          223.0,
+          181.0,
+          307.0,
+          203.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          419.0,
+          21.0,
+          532.0,
+          51.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          330.0,
+          123.0,
+          427.0,
+          155.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          376.0,
+          230.0,
+          485.0,
+          260.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          480.0,
+          86.0,
+          603.0,
+          125.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          547.0,
+          188.0,
+          663.0,
+          213.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          280.0,
+          501.0,
+          369.0,
+          520.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          608.0,
+          386.0,
+          731.0,
+          418.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          788.0,
+          249.0,
+          974.0,
+          296.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          592.0,
+          608.0,
+          722.0,
+          654.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          583.0,
+          664.0,
+          712.0,
+          693.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          289.0,
+          688.0,
+          386.0,
+          712.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          333.0,
+          885.0,
+          442.0,
+          912.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        691.0,
+        594.0,
+        709.0,
+        606.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        188.0,
+        19.0
+      ],
+      [
+        183.0,
+        313.0
+      ],
+      [
+        177.0,
+        600.0
+      ],
+      [
+        174.0,
+        1000.0
+      ]
+    ]
+  },
+  "144": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          328.0,
+          180.0,
+          415.0,
+          211.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          279.0,
+          259.0,
+          369.0,
+          280.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          358.0,
+          98.0,
+          467.0,
+          122.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          480.0,
+          312.0,
+          595.0,
+          350.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          526.0,
+          222.0,
+          652.0,
+          258.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          546.0,
+          250.0,
+          678.0,
+          276.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          660.0,
+          318.0,
+          776.0,
+          363.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          683.0,
+          376.0,
+          801.0,
+          419.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          461.0,
+          513.0,
+          580.0,
+          547.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          477.0,
+          633.0,
+          597.0,
+          674.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          595.0,
+          603.0,
+          730.0,
+          646.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          642.0,
+          746.0,
+          680.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          386.0,
+          715.0,
+          492.0,
+          742.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          483.0,
+          720.0,
+          601.0,
+          759.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          763.0,
+          543.0,
+          794.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          538.0,
+          790.0,
+          661.0,
+          822.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          262.0,
+          770.0,
+          347.0,
+          802.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        782.0,
+        521.0,
+        802.0,
+        533.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        230.0,
+        20.0
+      ],
+      [
+        230.0,
+        500.0
+      ],
+      [
+        230.0,
+        980.0
+      ]
+    ]
+  },
+  "272": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          287.0,
+          293.0,
+          381.0,
+          313.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          254.0,
+          417.0,
+          345.0,
+          434.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          174.0,
+          444.0,
+          250.0,
+          467.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          228.0,
+          831.0,
+          317.0,
+          848.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          326.0,
+          134.0,
+          439.0,
+          162.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          470.0,
+          203.0,
+          597.0,
+          237.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          517.0,
+          197.0,
+          655.0,
+          222.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          568.0,
+          296.0,
+          712.0,
+          327.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          479.0,
+          351.0,
+          603.0,
+          379.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          624.0,
+          477.0,
+          756.0,
+          513.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          621.0,
+          537.0,
+          778.0,
+          563.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          635.0,
+          552.0,
+          774.0,
+          589.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          440.0,
+          615.0,
+          562.0,
+          642.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          643.0,
+          701.0,
+          792.0,
+          729.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          468.0,
+          733.0,
+          596.0,
+          765.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          390.0,
+          744.0,
+          502.0,
+          770.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          366.0,
+          819.0,
+          471.0,
+          855.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          515.0,
+          827.0,
+          638.0,
+          868.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        753.0,
+        723.0,
+        770.0,
+        729.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        174.0,
+        18.0
+      ],
+      [
+        176.0,
+        500.0
+      ],
+      [
+        175.0,
+        981.0
+      ]
+    ]
+  },
+  "400": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          180.0,
+          558.0,
+          252.0,
+          575.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          215.0,
+          636.0,
+          295.0,
+          654.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          311.0,
+          674.0,
+          411.0,
+          698.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          347.0,
+          526.0,
+          436.0,
+          554.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          386.0,
+          418.0,
+          480.0,
+          442.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          433.0,
+          321.0,
+          549.0,
+          353.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          471.0,
+          427.0,
+          583.0,
+          471.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          470.0,
+          620.0,
+          595.0,
+          654.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          521.0,
+          710.0,
+          640.0,
+          749.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          499.0,
+          874.0,
+          630.0,
+          908.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          518.0,
+          933.0,
+          650.0,
+          970.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          621.0,
+          955.0,
+          771.0,
+          1000.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          647.0,
+          283.0,
+          775.0,
+          327.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          691.0,
+          242.0,
+          850.0,
+          287.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        728.0,
+        474.0,
+        747.0,
+        486.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        210.0,
+        19.0
+      ],
+      [
+        221.0,
+        513.0
+      ],
+      [
+        230.0,
+        999.0
+      ]
+    ]
+  },
+  "528": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          98.0,
+          471.0,
+          172.0,
+          489.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          143.0,
+          504.0,
+          230.0,
+          523.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          248.0,
+          615.0,
+          350.0,
+          636.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          276.0,
+          426.0,
+          378.0,
+          447.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          316.0,
+          322.0,
+          439.0,
+          347.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          365.0,
+          227.0,
+          487.0,
+          256.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          444.0,
+          195.0,
+          581.0,
+          230.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          431.0,
+          500.0,
+          569.0,
+          526.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          374.0,
+          555.0,
+          497.0,
+          579.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          782.0,
+          561.0,
+          809.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          447.0,
+          691.0,
+          581.0,
+          722.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          583.0,
+          687.0,
+          706.0,
+          726.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          629.0,
+          451.0,
+          783.0,
+          490.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          645.0,
+          462.0,
+          804.0,
+          498.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          650.0,
+          692.0,
+          808.0,
+          726.0
+        ],
+        "team": "Team black",
+        "jersey_number": "61"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          705.0,
+          645.0,
+          805.0,
+          697.0
+        ],
+        "team": "Team red",
+        "jersey_number": "66"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        736.0,
+        693.0,
+        755.0,
+        703.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        153.0,
+        19.0
+      ],
+      [
+        153.0,
+        981.0
+      ]
+    ]
+  },
+  "656": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          118.0,
+          534.0,
+          199.0,
+          555.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          66.0,
+          519.0,
+          140.0,
+          537.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          264.0,
+          381.0,
+          385.0,
+          399.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          242.0,
+          458.0,
+          340.0,
+          487.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          226.0,
+          627.0,
+          326.0,
+          652.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          334.0,
+          263.0,
+          454.0,
+          298.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          454.0,
+          239.0,
+          589.0,
+          271.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          451.0,
+          372.0,
+          588.0,
+          407.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          524.0,
+          532.0,
+          556.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          418.0,
+          684.0,
+          552.0,
+          715.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          707.0,
+          530.0,
+          737.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          629.0,
+          395.0,
+          793.0,
+          444.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          656.0,
+          487.0,
+          835.0,
+          519.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          676.0,
+          586.0,
+          840.0,
+          644.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          626.0,
+          767.0,
+          681.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          623.0,
+          863.0,
+          782.0,
+          900.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        798.0,
+        554.0,
+        820.0,
+        569.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        108.0,
+        19.0
+      ],
+      [
+        114.0,
+        981.0
+      ]
+    ]
+  },
+  "784": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          210.0,
+          392.0,
+          929.0,
+          715.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          306.0,
+          621.0,
+          761.0,
+          724.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          185.0,
+          723.0,
+          893.0,
+          1000.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          485.0,
+          391.0,
+          641.0,
+          446.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          493.0,
+          467.0,
+          617.0,
+          506.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        829.0,
+        174.0,
+        928.0,
+        235.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        585.0,
+        20.0
+      ],
+      [
+        592.0,
+        532.0
+      ],
+      [
+        588.0,
+        989.0
+      ]
+    ]
+  },
+  "32": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          232.0,
+          301.0,
+          314.0,
+          324.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          129.0,
+          540.0,
+          157.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          339.0,
+          241.0,
+          432.0,
+          269.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          383.0,
+          339.0,
+          492.0,
+          363.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          199.0,
+          608.0,
+          235.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          542.0,
+          263.0,
+          652.0,
+          298.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          291.0,
+          616.0,
+          379.0,
+          638.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          300.0,
+          797.0,
+          399.0,
+          814.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          471.0,
+          729.0,
+          500.0
+        ],
+        "team": "Team black",
+        "jersey_number": "23"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          574.0,
+          623.0,
+          703.0,
+          656.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          583.0,
+          692.0,
+          726.0,
+          724.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          791.0,
+          279.0,
+          967.0,
+          329.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        668.0,
+        611.0,
+        685.0,
+        621.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        193.0,
+        20.0
+      ],
+      [
+        193.0,
+        1000.0
+      ]
+    ]
+  },
+  "160": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          304.0,
+          246.0,
+          388.0,
+          274.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          333.0,
+          175.0,
+          447.0,
+          198.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          256.0,
+          350.0,
+          345.0,
+          368.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          461.0,
+          370.0,
+          578.0,
+          408.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          507.0,
+          281.0,
+          637.0,
+          309.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          518.0,
+          290.0,
+          651.0,
+          337.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          653.0,
+          391.0,
+          779.0,
+          425.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          687.0,
+          431.0,
+          806.0,
+          461.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          582.0,
+          562.0,
+          611.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          468.0,
+          636.0,
+          578.0,
+          668.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          580.0,
+          642.0,
+          726.0,
+          680.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          603.0,
+          703.0,
+          715.0,
+          735.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          233.0,
+          850.0,
+          324.0,
+          878.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          365.0,
+          801.0,
+          473.0,
+          825.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          402.0,
+          829.0,
+          521.0,
+          864.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          459.0,
+          788.0,
+          584.0,
+          829.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          516.0,
+          868.0,
+          642.0,
+          891.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        799.0,
+        502.0,
+        822.0,
+        516.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        198.0,
+        19.0
+      ],
+      [
+        198.0,
+        565.0
+      ],
+      [
+        199.0,
+        977.0
+      ]
+    ]
+  },
+  "288": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          274.0,
+          272.0,
+          383.0,
+          294.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          261.0,
+          384.0,
+          350.0,
+          405.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          180.0,
+          403.0,
+          254.0,
+          426.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          330.0,
+          106.0,
+          441.0,
+          131.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          473.0,
+          169.0,
+          565.0,
+          205.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          521.0,
+          181.0,
+          648.0,
+          210.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          599.0,
+          229.0,
+          739.0,
+          259.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          476.0,
+          316.0,
+          595.0,
+          338.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          617.0,
+          411.0,
+          756.0,
+          460.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          518.0,
+          751.0,
+          564.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          654.0,
+          528.0,
+          790.0,
+          571.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          601.0,
+          560.0,
+          625.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          408.0,
+          674.0,
+          508.0,
+          705.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          477.0,
+          697.0,
+          604.0,
+          727.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          630.0,
+          716.0,
+          778.0,
+          751.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          521.0,
+          796.0,
+          646.0,
+          820.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          369.0,
+          784.0,
+          471.0,
+          808.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          231.0,
+          783.0,
+          318.0,
+          798.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        733.0,
+        733.0,
+        749.0,
+        745.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        179.0,
+        0.0
+      ],
+      [
+        179.0,
+        1000.0
+      ]
+    ]
+  },
+  "416": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          159.0,
+          642.0,
+          239.0,
+          660.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          198.0,
+          706.0,
+          280.0,
+          729.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          296.0,
+          765.0,
+          399.0,
+          790.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          326.0,
+          592.0,
+          424.0,
+          611.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          376.0,
+          492.0,
+          501.0,
+          517.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          387.0,
+          545.0,
+          417.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          454.0,
+          452.0,
+          574.0,
+          479.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          459.0,
+          690.0,
+          594.0,
+          720.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          519.0,
+          802.0,
+          649.0,
+          836.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          486.0,
+          953.0,
+          626.0,
+          982.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          640.0,
+          332.0,
+          786.0,
+          396.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          647.0,
+          365.0,
+          814.0,
+          407.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        757.0,
+        465.0,
+        778.0,
+        478.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        174.0,
+        18.0
+      ],
+      [
+        174.0,
+        992.0
+      ]
+    ]
+  },
+  "544": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          105.0,
+          455.0,
+          172.0,
+          474.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          146.0,
+          490.0,
+          230.0,
+          507.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          250.0,
+          607.0,
+          353.0,
+          624.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          315.0,
+          310.0,
+          440.0,
+          334.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          276.0,
+          412.0,
+          380.0,
+          434.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          367.0,
+          217.0,
+          487.0,
+          243.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          448.0,
+          206.0,
+          587.0,
+          236.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          435.0,
+          490.0,
+          574.0,
+          516.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          380.0,
+          507.0,
+          502.0,
+          538.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          448.0,
+          676.0,
+          580.0,
+          701.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          768.0,
+          560.0,
+          796.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          654.0,
+          423.0,
+          814.0,
+          473.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          624.0,
+          449.0,
+          780.0,
+          496.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          650.0,
+          644.0,
+          798.0,
+          672.0
+        ],
+        "team": "Team red",
+        "jersey_number": "66"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          622.0,
+          675.0,
+          769.0,
+          720.0
+        ],
+        "team": "Team black",
+        "jersey_number": "61"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          711.0,
+          744.0,
+          754.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        729.0,
+        729.0,
+        750.0,
+        743.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        139.0,
+        19.0
+      ],
+      [
+        142.0,
+        977.0
+      ]
+    ]
+  },
+  "672": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          110.0,
+          561.0,
+          199.0,
+          583.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          229.0,
+          652.0,
+          329.0,
+          677.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          244.0,
+          479.0,
+          344.0,
+          526.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          261.0,
+          408.0,
+          377.0,
+          434.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          339.0,
+          320.0,
+          456.0,
+          361.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          550.0,
+          534.0,
+          575.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          422.0,
+          695.0,
+          555.0,
+          729.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          734.0,
+          531.0,
+          762.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          462.0,
+          245.0,
+          602.0,
+          278.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          472.0,
+          369.0,
+          617.0,
+          407.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          653.0,
+          454.0,
+          805.0,
+          524.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          680.0,
+          537.0,
+          834.0,
+          581.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          658.0,
+          533.0,
+          827.0,
+          566.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          625.0,
+          586.0,
+          770.0,
+          642.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          638.0,
+          896.0,
+          791.0,
+          939.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        731.0,
+        537.0,
+        752.0,
+        549.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        103.0,
+        19.0
+      ],
+      [
+        103.0,
+        500.0
+      ],
+      [
+        103.0,
+        981.0
+      ]
+    ]
+  },
+  "800": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          174.0,
+          399.0,
+          910.0,
+          783.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          421.0,
+          667.0,
+          480.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          408.0,
+          463.0,
+          705.0,
+          550.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          448.0,
+          873.0,
+          621.0,
+          918.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        802.0,
+        395.0,
+        902.0,
+        452.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        592.0,
+        19.0
+      ],
+      [
+        585.0,
+        237.0
+      ],
+      [
+        583.0,
+        442.0
+      ],
+      [
+        581.0,
+        622.0
+      ],
+      [
+        578.0,
+        866.0
+      ],
+      [
+        579.0,
+        1000.0
+      ]
+    ]
+  },
+  "48": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          257.0,
+          384.0,
+          336.0,
+          404.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          363.0,
+          327.0,
+          460.0,
+          350.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          449.0,
+          196.0,
+          560.0,
+          233.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          407.0,
+          414.0,
+          518.0,
+          439.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          518.0,
+          298.0,
+          624.0,
+          342.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          573.0,
+          358.0,
+          670.0,
+          383.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          606.0,
+          517.0,
+          719.0,
+          545.0
+        ],
+        "team": "Team black",
+        "jersey_number": "123"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          564.0,
+          630.0,
+          695.0,
+          668.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          694.0,
+          748.0,
+          733.0
+        ],
+        "team": "Team black",
+        "jersey_number": "61"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          316.0,
+          710.0,
+          407.0,
+          729.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          323.0,
+          873.0,
+          425.0,
+          895.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          785.0,
+          292.0,
+          954.0,
+          346.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        668.0,
+        627.0,
+        688.0,
+        638.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        240.0,
+        20.0
+      ],
+      [
+        240.0,
+        360.0
+      ],
+      [
+        230.0,
+        700.0
+      ],
+      [
+        219.0,
+        1000.0
+      ]
+    ]
+  },
+  "176": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          286.0,
+          292.0,
+          376.0,
+          321.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          323.0,
+          237.0,
+          434.0,
+          258.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          243.0,
+          418.0,
+          332.0,
+          437.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          168.0,
+          513.0,
+          239.0,
+          530.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          220.0,
+          908.0,
+          310.0,
+          939.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          353.0,
+          866.0,
+          461.0,
+          889.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          386.0,
+          880.0,
+          508.0,
+          912.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          453.0,
+          842.0,
+          574.0,
+          878.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          427.0,
+          638.0,
+          545.0,
+          663.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          457.0,
+          611.0,
+          576.0,
+          649.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          453.0,
+          415.0,
+          567.0,
+          442.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          316.0,
+          626.0,
+          345.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          501.0,
+          351.0,
+          627.0,
+          388.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          587.0,
+          678.0,
+          731.0,
+          710.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          599.0,
+          754.0,
+          725.0,
+          782.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          507.0,
+          921.0,
+          633.0,
+          949.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          666.0,
+          394.0,
+          811.0,
+          458.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          687.0,
+          465.0,
+          839.0,
+          502.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        819.0,
+        475.0,
+        839.0,
+        487.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        179.0,
+        19.0
+      ],
+      [
+        181.0,
+        981.0
+      ]
+    ]
+  },
+  "304": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          151.0,
+          190.0,
+          226.0,
+          211.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          188.0,
+          363.0,
+          263.0,
+          388.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          267.0,
+          353.0,
+          358.0,
+          378.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          334.0,
+          88.0,
+          449.0,
+          111.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          299.0,
+          252.0,
+          392.0,
+          277.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          459.0,
+          123.0,
+          581.0,
+          151.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          516.0,
+          159.0,
+          642.0,
+          189.0
+        ],
+        "team": "Team black",
+        "jersey_number": "77"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          469.0,
+          277.0,
+          586.0,
+          313.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          614.0,
+          153.0,
+          767.0,
+          192.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          621.0,
+          394.0,
+          763.0,
+          444.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          441.0,
+          586.0,
+          563.0,
+          608.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          408.0,
+          602.0,
+          513.0,
+          642.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          598.0,
+          553.0,
+          715.0,
+          590.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          664.0,
+          567.0,
+          799.0,
+          600.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          483.0,
+          658.0,
+          609.0,
+          696.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          614.0,
+          712.0,
+          752.0,
+          749.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          239.0,
+          741.0,
+          324.0,
+          761.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          376.0,
+          744.0,
+          481.0,
+          770.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          534.0,
+          762.0,
+          657.0,
+          791.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        722.0,
+        731.0,
+        740.0,
+        742.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        193.0,
+        20.0
+      ],
+      [
+        194.0,
+        500.0
+      ],
+      [
+        194.0,
+        990.0
+      ]
+    ]
+  },
+  "432": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          140.0,
+          665.0,
+          225.0,
+          683.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          186.0,
+          715.0,
+          269.0,
+          742.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          287.0,
+          800.0,
+          387.0,
+          824.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          318.0,
+          600.0,
+          417.0,
+          622.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          365.0,
+          505.0,
+          489.0,
+          535.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          413.0,
+          401.0,
+          532.0,
+          429.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          443.0,
+          425.0,
+          568.0,
+          456.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          454.0,
+          706.0,
+          589.0,
+          734.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          521.0,
+          796.0,
+          651.0,
+          835.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          480.0,
+          970.0,
+          615.0,
+          999.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          645.0,
+          395.0,
+          788.0,
+          461.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          637.0,
+          442.0,
+          794.0,
+          480.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        764.0,
+        497.0,
+        784.0,
+        511.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        161.0,
+        18.0
+      ],
+      [
+        161.0,
+        513.0
+      ],
+      [
+        160.0,
+        1000.0
+      ]
+    ]
+  },
+  "560": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          140.0,
+          447.0,
+          227.0,
+          467.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          273.0,
+          368.0,
+          377.0,
+          393.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          247.0,
+          569.0,
+          350.0,
+          587.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          310.0,
+          269.0,
+          439.0,
+          294.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          363.0,
+          172.0,
+          487.0,
+          201.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          386.0,
+          431.0,
+          511.0,
+          462.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          433.0,
+          448.0,
+          570.0,
+          473.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          448.0,
+          180.0,
+          591.0,
+          209.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          424.0,
+          723.0,
+          558.0,
+          751.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          439.0,
+          636.0,
+          573.0,
+          663.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          655.0,
+          335.0,
+          821.0,
+          374.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          614.0,
+          368.0,
+          755.0,
+          401.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          653.0,
+          599.0,
+          795.0,
+          650.0
+        ],
+        "team": "Team red",
+        "jersey_number": "66"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          608.0,
+          647.0,
+          759.0,
+          691.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          617.0,
+          723.0,
+          761.0,
+          769.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        766.0,
+        727.0,
+        787.0,
+        741.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        139.0,
+        19.0
+      ],
+      [
+        142.0,
+        498.0
+      ],
+      [
+        143.0,
+        981.0
+      ]
+    ]
+  },
+  "688": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          113.0,
+          571.0,
+          205.0,
+          588.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          261.0,
+          414.0,
+          377.0,
+          440.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          248.0,
+          508.0,
+          345.0,
+          531.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          232.0,
+          654.0,
+          333.0,
+          683.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          338.0,
+          354.0,
+          456.0,
+          379.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          404.0,
+          548.0,
+          535.0,
+          576.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          430.0,
+          685.0,
+          565.0,
+          723.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          737.0,
+          531.0,
+          774.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          473.0,
+          229.0,
+          615.0,
+          268.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          502.0,
+          340.0,
+          642.0,
+          373.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          693.0,
+          469.0,
+          864.0,
+          507.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          677.0,
+          565.0,
+          820.0,
+          606.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          664.0,
+          561.0,
+          815.0,
+          608.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          629.0,
+          600.0,
+          778.0,
+          638.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          642.0,
+          906.0,
+          805.0,
+          939.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          942.0,
+          220.0,
+          999.0,
+          259.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        815.0,
+        582.0,
+        836.0,
+        595.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        114.0,
+        19.0
+      ],
+      [
+        114.0,
+        981.0
+      ]
+    ]
+  },
+  "816": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          238.0,
+          485.0,
+          886.0,
+          718.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          414.0,
+          820.0,
+          673.0,
+          916.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        739.0,
+        574.0,
+        808.0,
+        615.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        595.0,
+        18.0
+      ],
+      [
+        583.0,
+        237.0
+      ],
+      [
+        582.0,
+        451.0
+      ],
+      [
+        580.0,
+        680.0
+      ],
+      [
+        582.0,
+        989.0
+      ]
+    ]
+  },
+  "64": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          273.0,
+          431.0,
+          356.0,
+          452.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          383.0,
+          370.0,
+          480.0,
+          394.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          468.0,
+          234.0,
+          584.0,
+          267.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          429.0,
+          461.0,
+          540.0,
+          484.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          525.0,
+          381.0,
+          636.0,
+          417.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          586.0,
+          419.0,
+          715.0,
+          442.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          581.0,
+          523.0,
+          708.0,
+          560.0
+        ],
+        "team": "Team black",
+        "jersey_number": "123"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          554.0,
+          617.0,
+          684.0,
+          666.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          617.0,
+          663.0,
+          761.0,
+          703.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          338.0,
+          760.0,
+          431.0,
+          785.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          342.0,
+          915.0,
+          447.0,
+          935.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          776.0,
+          295.0,
+          942.0,
+          326.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        662.0,
+        631.0,
+        678.0,
+        642.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        242.0,
+        22.0
+      ],
+      [
+        240.0,
+        276.0
+      ],
+      [
+        237.0,
+        513.0
+      ],
+      [
+        231.0,
+        755.0
+      ],
+      [
+        228.0,
+        975.0
+      ]
+    ]
+  },
+  "192": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          281.0,
+          312.0,
+          371.0,
+          330.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          318.0,
+          269.0,
+          429.0,
+          291.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          237.0,
+          459.0,
+          326.0,
+          479.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          160.0,
+          548.0,
+          233.0,
+          566.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          496.0,
+          318.0,
+          620.0,
+          353.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          495.0,
+          374.0,
+          617.0,
+          408.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          449.0,
+          431.0,
+          574.0,
+          462.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          462.0,
+          591.0,
+          577.0,
+          623.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          423.0,
+          660.0,
+          547.0,
+          693.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          601.0,
+          691.0,
+          744.0,
+          729.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          608.0,
+          771.0,
+          741.0,
+          801.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          450.0,
+          861.0,
+          573.0,
+          894.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          500.0,
+          949.0,
+          629.0,
+          975.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          377.0,
+          899.0,
+          499.0,
+          927.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          344.0,
+          902.0,
+          451.0,
+          927.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          210.0,
+          944.0,
+          304.0,
+          968.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          703.0,
+          483.0,
+          863.0,
+          518.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          695.0,
+          452.0,
+          865.0,
+          498.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        805.0,
+        508.0,
+        832.0,
+        521.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        174.0,
+        33.0
+      ],
+      [
+        174.0,
+        992.0
+      ]
+    ]
+  },
+  "320": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          198.0,
+          345.0,
+          274.0,
+          368.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          286.0,
+          337.0,
+          373.0,
+          366.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          317.0,
+          248.0,
+          404.0,
+          279.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          347.0,
+          96.0,
+          463.0,
+          118.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          455.0,
+          96.0,
+          574.0,
+          131.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          521.0,
+          160.0,
+          650.0,
+          192.0
+        ],
+        "team": "Team black",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          486.0,
+          263.0,
+          595.0,
+          310.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          654.0,
+          93.0,
+          802.0,
+          126.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          638.0,
+          405.0,
+          786.0,
+          438.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          421.0,
+          529.0,
+          527.0,
+          568.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          452.0,
+          584.0,
+          574.0,
+          611.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          587.0,
+          612.0,
+          722.0,
+          637.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          671.0,
+          624.0,
+          814.0,
+          666.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          497.0,
+          646.0,
+          620.0,
+          676.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          558.0,
+          751.0,
+          629.0,
+          776.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          599.0,
+          741.0,
+          737.0,
+          780.0
+        ],
+        "team": "Team red",
+        "jersey_number": "9"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          384.0,
+          731.0,
+          492.0,
+          758.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          250.0,
+          725.0,
+          337.0,
+          750.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        633.0,
+        527.0,
+        650.0,
+        539.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        215.0,
+        18.0
+      ],
+      [
+        215.0,
+        500.0
+      ],
+      [
+        217.0,
+        981.0
+      ]
+    ]
+  },
+  "448": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          139.0,
+          646.0,
+          212.0,
+          668.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          174.0,
+          695.0,
+          257.0,
+          720.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          275.0,
+          797.0,
+          377.0,
+          822.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          401.0,
+          396.0,
+          521.0,
+          423.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          441.0,
+          376.0,
+          566.0,
+          408.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          355.0,
+          499.0,
+          481.0,
+          525.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          308.0,
+          578.0,
+          411.0,
+          607.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          451.0,
+          687.0,
+          589.0,
+          715.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          470.0,
+          955.0,
+          609.0,
+          986.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          977.0,
+          628.0,
+          999.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          539.0,
+          762.0,
+          659.0,
+          796.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          632.0,
+          455.0,
+          775.0,
+          513.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          641.0,
+          409.0,
+          784.0,
+          485.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        787.0,
+        588.0,
+        809.0,
+        601.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        149.0,
+        19.0
+      ],
+      [
+        153.0,
+        313.0
+      ],
+      [
+        161.0,
+        626.0
+      ],
+      [
+        177.0,
+        989.0
+      ]
+    ]
+  },
+  "576": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          119.0,
+          405.0,
+          205.0,
+          425.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          229.0,
+          529.0,
+          333.0,
+          551.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          253.0,
+          327.0,
+          354.0,
+          351.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          289.0,
+          229.0,
+          420.0,
+          254.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          342.0,
+          126.0,
+          467.0,
+          159.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          372.0,
+          369.0,
+          500.0,
+          400.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          412.0,
+          408.0,
+          550.0,
+          434.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          434.0,
+          160.0,
+          573.0,
+          189.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          416.0,
+          588.0,
+          550.0,
+          617.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          405.0,
+          673.0,
+          535.0,
+          700.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          605.0,
+          273.0,
+          753.0,
+          326.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          644.0,
+          233.0,
+          820.0,
+          283.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          597.0,
+          641.0,
+          753.0,
+          673.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          604.0,
+          617.0,
+          761.0,
+          655.0
+        ],
+        "team": "Team red",
+        "jersey_number": "66"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          619.0,
+          710.0,
+          780.0,
+          749.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        766.0,
+        696.0,
+        789.0,
+        710.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        109.0,
+        21.0
+      ],
+      [
+        109.0,
+        988.0
+      ]
+    ]
+  },
+  "704": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          116.0,
+          569.0,
+          206.0,
+          584.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          233.0,
+          653.0,
+          331.0,
+          675.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          250.0,
+          503.0,
+          345.0,
+          529.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          260.0,
+          418.0,
+          375.0,
+          439.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          339.0,
+          365.0,
+          455.0,
+          386.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          409.0,
+          542.0,
+          542.0,
+          572.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          671.0,
+          571.0,
+          703.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          400.0,
+          739.0,
+          526.0,
+          771.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          483.0,
+          219.0,
+          626.0,
+          253.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          517.0,
+          307.0,
+          673.0,
+          339.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          700.0,
+          390.0,
+          870.0,
+          437.0
+        ],
+        "team": "Team red",
+        "jersey_number": "11"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          672.0,
+          532.0,
+          814.0,
+          597.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          702.0,
+          573.0,
+          843.0,
+          620.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          623.0,
+          602.0,
+          775.0,
+          646.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          648.0,
+          922.0,
+          807.0,
+          951.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        836.0,
+        584.0,
+        859.0,
+        598.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        106.0,
+        32.0
+      ],
+      [
+        114.0,
+        502.0
+      ],
+      [
+        117.0,
+        988.0
+      ]
+    ]
+  },
+  "832": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          278.0,
+          457.0,
+          872.0,
+          648.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          408.0,
+          857.0,
+          715.0,
+          941.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          250.0,
+          896.0,
+          879.0,
+          999.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        770.0,
+        527.0,
+        839.0,
+        565.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        633.0,
+        20.0
+      ],
+      [
+        633.0,
+        412.0
+      ],
+      [
+        633.0,
+        999.0
+      ]
+    ]
+  },
+  "80": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          23.0,
+          607.0,
+          57.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          474.0,
+          255.0,
+          587.0,
+          292.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          705.0,
+          18.0,
+          867.0,
+          66.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          17.0,
+          725.0,
+          39.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          753.0,
+          279.0,
+          912.0,
+          319.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          393.0,
+          409.0,
+          487.0,
+          431.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          513.0,
+          425.0,
+          628.0,
+          459.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          609.0,
+          467.0,
+          735.0,
+          498.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          280.0,
+          471.0,
+          363.0,
+          490.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          495.0,
+          547.0,
+          520.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          578.0,
+          542.0,
+          680.0,
+          569.0
+        ],
+        "team": "Team black",
+        "jersey_number": "123"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          545.0,
+          616.0,
+          662.0,
+          646.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          623.0,
+          638.0,
+          757.0,
+          669.0
+        ],
+        "team": "Team black",
+        "jersey_number": "61"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          351.0,
+          804.0,
+          442.0,
+          827.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          351.0,
+          943.0,
+          458.0,
+          967.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        683.0,
+        578.0,
+        700.0,
+        588.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        232.0,
+        19.0
+      ],
+      [
+        230.0,
+        410.0
+      ],
+      [
+        228.0,
+        626.0
+      ],
+      [
+        231.0,
+        1000.0
+      ]
+    ]
+  },
+  "208": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          279.0,
+          303.0,
+          370.0,
+          326.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          321.0,
+          261.0,
+          431.0,
+          281.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          241.0,
+          463.0,
+          328.0,
+          483.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          146.0,
+          330.0,
+          209.0,
+          345.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          152.0,
+          544.0,
+          237.0,
+          560.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          496.0,
+          292.0,
+          627.0,
+          324.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          359.0,
+          618.0,
+          396.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          465.0,
+          431.0,
+          583.0,
+          458.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          471.0,
+          539.0,
+          606.0,
+          577.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          659.0,
+          549.0,
+          686.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          452.0,
+          846.0,
+          576.0,
+          878.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          381.0,
+          878.0,
+          497.0,
+          903.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          347.0,
+          896.0,
+          453.0,
+          919.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          501.0,
+          932.0,
+          627.0,
+          960.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          217.0,
+          932.0,
+          307.0,
+          953.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          623.0,
+          642.0,
+          752.0,
+          696.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          643.0,
+          743.0,
+          764.0,
+          785.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          712.0,
+          493.0,
+          862.0,
+          555.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          706.0,
+          447.0,
+          865.0,
+          508.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        793.0,
+        513.0,
+        810.0,
+        521.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        174.0,
+        18.0
+      ],
+      [
+        178.0,
+        549.0
+      ],
+      [
+        179.0,
+        992.0
+      ]
+    ]
+  },
+  "336": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          188.0,
+          258.0,
+          261.0,
+          278.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          226.0,
+          409.0,
+          299.0,
+          427.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          308.0,
+          411.0,
+          396.0,
+          432.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          342.0,
+          318.0,
+          428.0,
+          349.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          373.0,
+          178.0,
+          483.0,
+          201.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          465.0,
+          146.0,
+          579.0,
+          182.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          538.0,
+          241.0,
+          655.0,
+          271.0
+        ],
+        "team": "Team black",
+        "jersey_number": "77"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          487.0,
+          388.0,
+          595.0,
+          413.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          445.0,
+          526.0,
+          555.0,
+          559.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          478.0,
+          656.0,
+          598.0,
+          678.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          518.0,
+          701.0,
+          599.0,
+          733.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          595.0,
+          706.0,
+          735.0,
+          738.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          666.0,
+          442.0,
+          803.0,
+          484.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          679.0,
+          97.0,
+          846.0,
+          148.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          272.0,
+          796.0,
+          361.0,
+          821.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          409.0,
+          815.0,
+          517.0,
+          839.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          585.0,
+          839.0,
+          715.0,
+          861.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          599.0,
+          878.0,
+          742.0,
+          911.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          712.0,
+          764.0,
+          856.0,
+          802.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        595.0,
+        465.0,
+        613.0,
+        477.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        230.0,
+        20.0
+      ],
+      [
+        230.0,
+        500.0
+      ],
+      [
+        230.0,
+        980.0
+      ]
+    ]
+  },
+  "464": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          121.0,
+          613.0,
+          194.0,
+          630.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          159.0,
+          653.0,
+          237.0,
+          679.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          257.0,
+          769.0,
+          359.0,
+          793.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          334.0,
+          558.0,
+          366.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          381.0,
+          375.0,
+          505.0,
+          404.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          334.0,
+          479.0,
+          461.0,
+          503.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          292.0,
+          545.0,
+          393.0,
+          575.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          652.0,
+          574.0,
+          680.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          542.0,
+          736.0,
+          686.0,
+          770.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          637.0,
+          477.0,
+          788.0,
+          529.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          630.0,
+          521.0,
+          767.0,
+          559.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          394.0,
+          955.0,
+          523.0,
+          985.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          451.0,
+          934.0,
+          591.0,
+          958.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          471.0,
+          920.0,
+          604.0,
+          959.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          641.0,
+          955.0,
+          788.0,
+          995.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          723.0,
+          908.0,
+          866.0,
+          966.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        785.0,
+        605.0,
+        807.0,
+        618.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        130.0,
+        0.0
+      ],
+      [
+        134.0,
+        532.0
+      ],
+      [
+        157.0,
+        1000.0
+      ]
+    ]
+  },
+  "592": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          53.0,
+          368.0,
+          133.0,
+          386.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          105.0,
+          401.0,
+          192.0,
+          421.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          75.0,
+          535.0,
+          128.0,
+          553.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          330.0,
+          116.0,
+          451.0,
+          150.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          271.0,
+          222.0,
+          399.0,
+          248.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          239.0,
+          323.0,
+          342.0,
+          347.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          215.0,
+          521.0,
+          319.0,
+          547.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          423.0,
+          161.0,
+          565.0,
+          196.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          363.0,
+          341.0,
+          492.0,
+          372.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          399.0,
+          405.0,
+          536.0,
+          436.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          399.0,
+          581.0,
+          530.0,
+          613.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          394.0,
+          653.0,
+          524.0,
+          676.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          611.0,
+          230.0,
+          762.0,
+          292.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          655.0,
+          226.0,
+          825.0,
+          281.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          602.0,
+          620.0,
+          740.0,
+          661.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          581.0,
+          641.0,
+          729.0,
+          667.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          629.0,
+          717.0,
+          785.0,
+          755.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        764.0,
+        696.0,
+        785.0,
+        709.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        103.0,
+        19.0
+      ],
+      [
+        103.0,
+        981.0
+      ]
+    ]
+  },
+  "720": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          122.0,
+          569.0,
+          205.0,
+          588.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          256.0,
+          410.0,
+          372.0,
+          434.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          248.0,
+          510.0,
+          346.0,
+          532.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          233.0,
+          641.0,
+          335.0,
+          663.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          340.0,
+          367.0,
+          455.0,
+          389.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          414.0,
+          530.0,
+          544.0,
+          561.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          439.0,
+          648.0,
+          576.0,
+          681.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          397.0,
+          744.0,
+          522.0,
+          776.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          487.0,
+          204.0,
+          633.0,
+          237.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          541.0,
+          279.0,
+          691.0,
+          313.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          620.0,
+          574.0,
+          766.0,
+          611.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          651.0,
+          939.0,
+          805.0,
+          969.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          708.0,
+          320.0,
+          885.0,
+          354.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          691.0,
+          511.0,
+          852.0,
+          566.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          702.0,
+          551.0,
+          859.0,
+          598.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        850.0,
+        582.0,
+        874.0,
+        597.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        109.0,
+        19.0
+      ],
+      [
+        114.0,
+        252.0
+      ],
+      [
+        118.0,
+        513.0
+      ],
+      [
+        124.0,
+        804.0
+      ],
+      [
+        128.0,
+        977.0
+      ]
+    ]
+  },
+  "848": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          525.0,
+          678.0,
+          644.0,
+          710.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          291.0,
+          461.0,
+          863.0,
+          668.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          256.0,
+          747.0,
+          853.0,
+          893.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          384.0,
+          865.0,
+          744.0,
+          966.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        766.0,
+        255.0,
+        831.0,
+        307.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        609.0,
+        19.0
+      ],
+      [
+        615.0,
+        300.0
+      ],
+      [
+        620.0,
+        600.0
+      ],
+      [
+        625.0,
+        994.0
+      ]
+    ]
+  },
+  "96": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          226.0,
+          49.0,
+          307.0,
+          65.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          494.0,
+          83.0,
+          608.0,
+          114.0
+        ],
+        "team": "Team red",
+        "jersey_number": "83"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          542.0,
+          17.0,
+          665.0,
+          47.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          591.0,
+          46.0,
+          720.0,
+          80.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          474.0,
+          301.0,
+          591.0,
+          332.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          691.0,
+          88.0,
+          846.0,
+          127.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          727.0,
+          283.0,
+          888.0,
+          324.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          395.0,
+          462.0,
+          492.0,
+          486.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          504.0,
+          486.0,
+          622.0,
+          510.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          626.0,
+          510.0,
+          750.0,
+          541.0
+        ],
+        "team": "Team red",
+        "jersey_number": "66"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          565.0,
+          580.0,
+          672.0,
+          602.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          622.0,
+          613.0,
+          750.0,
+          661.0
+        ],
+        "team": "Team black",
+        "jersey_number": "6"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          521.0,
+          614.0,
+          638.0,
+          665.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          441.0,
+          540.0,
+          551.0,
+          566.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          278.0,
+          529.0,
+          363.0,
+          546.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          355.0,
+          866.0,
+          449.0,
+          900.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        701.0,
+        543.0,
+        719.0,
+        553.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        252.0,
+        20.0
+      ],
+      [
+        252.0,
+        500.0
+      ],
+      [
+        233.0,
+        1000.0
+      ]
+    ]
+  },
+  "224": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          287.0,
+          309.0,
+          376.0,
+          329.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          323.0,
+          233.0,
+          432.0,
+          264.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          247.0,
+          461.0,
+          334.0,
+          481.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          161.0,
+          529.0,
+          242.0,
+          545.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          220.0,
+          915.0,
+          313.0,
+          938.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          355.0,
+          891.0,
+          461.0,
+          916.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          384.0,
+          847.0,
+          501.0,
+          873.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          458.0,
+          822.0,
+          584.0,
+          850.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          507.0,
+          914.0,
+          632.0,
+          942.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          434.0,
+          652.0,
+          554.0,
+          678.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          653.0,
+          683.0,
+          789.0,
+          712.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          639.0,
+          565.0,
+          772.0,
+          617.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          691.0,
+          517.0,
+          827.0,
+          568.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          709.0,
+          428.0,
+          857.0,
+          477.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          505.0,
+          482.0,
+          627.0,
+          518.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          476.0,
+          422.0,
+          604.0,
+          451.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          498.0,
+          329.0,
+          612.0,
+          381.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          510.0,
+          263.0,
+          642.0,
+          294.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        794.0,
+        532.0,
+        814.0,
+        545.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        183.0,
+        19.0
+      ],
+      [
+        184.0,
+        994.0
+      ]
+    ]
+  },
+  "352": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          201.0,
+          303.0,
+          272.0,
+          318.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          234.0,
+          437.0,
+          310.0,
+          452.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          322.0,
+          449.0,
+          413.0,
+          467.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          283.0,
+          853.0,
+          375.0,
+          870.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          391.0,
+          219.0,
+          502.0,
+          244.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          332.0,
+          340.0,
+          442.0,
+          368.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          468.0,
+          161.0,
+          584.0,
+          189.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          528.0,
+          285.0,
+          658.0,
+          313.0
+        ],
+        "team": "Team black",
+        "jersey_number": "77"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          510.0,
+          463.0,
+          610.0,
+          487.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          460.0,
+          487.0,
+          572.0,
+          532.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          496.0,
+          689.0,
+          620.0,
+          712.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          421.0,
+          873.0,
+          529.0,
+          898.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          531.0,
+          737.0,
+          656.0,
+          772.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          604.0,
+          762.0,
+          747.0,
+          796.0
+        ],
+        "team": "Team black",
+        "jersey_number": "61"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          665.0,
+          413.0,
+          803.0,
+          464.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          715.0,
+          111.0,
+          877.0,
+          159.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          595.0,
+          955.0,
+          730.0,
+          990.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          606.0,
+          903.0,
+          743.0,
+          935.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          729.0,
+          864.0,
+          882.0,
+          902.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        604.0,
+        479.0,
+        622.0,
+        490.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        243.0,
+        19.0
+      ],
+      [
+        243.0,
+        502.0
+      ],
+      [
+        245.0,
+        999.0
+      ]
+    ]
+  },
+  "480": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          108.0,
+          560.0,
+          180.0,
+          580.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          146.0,
+          604.0,
+          228.0,
+          626.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          243.0,
+          720.0,
+          347.0,
+          743.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          318.0,
+          429.0,
+          444.0,
+          461.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          283.0,
+          501.0,
+          381.0,
+          532.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          368.0,
+          332.0,
+          492.0,
+          360.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          421.0,
+          283.0,
+          556.0,
+          316.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          600.0,
+          566.0,
+          631.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          374.0,
+          831.0,
+          500.0,
+          861.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          434.0,
+          882.0,
+          570.0,
+          912.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          452.0,
+          843.0,
+          589.0,
+          880.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          556.0,
+          703.0,
+          706.0,
+          742.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          636.0,
+          555.0,
+          786.0,
+          595.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          650.0,
+          528.0,
+          807.0,
+          597.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          693.0,
+          761.0,
+          836.0,
+          806.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          645.0,
+          833.0,
+          799.0,
+          882.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        781.0,
+        613.0,
+        802.0,
+        629.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        142.0,
+        18.0
+      ],
+      [
+        153.0,
+        503.0
+      ],
+      [
+        156.0,
+        999.0
+      ]
+    ]
+  },
+  "608": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          333.0,
+          120.0,
+          452.0,
+          149.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          268.0,
+          228.0,
+          392.0,
+          252.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          238.0,
+          329.0,
+          339.0,
+          351.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          387.0,
+          324.0,
+          501.0,
+          349.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          105.0,
+          408.0,
+          191.0,
+          426.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          395.0,
+          406.0,
+          531.0,
+          448.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          215.0,
+          521.0,
+          317.0,
+          542.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          397.0,
+          589.0,
+          529.0,
+          617.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          398.0,
+          636.0,
+          529.0,
+          665.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          584.0,
+          638.0,
+          729.0,
+          664.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          597.0,
+          645.0,
+          737.0,
+          690.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          637.0,
+          687.0,
+          797.0,
+          749.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          626.0,
+          235.0,
+          791.0,
+          278.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          664.0,
+          276.0,
+          838.0,
+          319.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          161.0,
+          567.0,
+          196.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        768.0,
+        679.0,
+        791.0,
+        693.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        92.0,
+        19.0
+      ],
+      [
+        92.0,
+        995.0
+      ]
+    ]
+  },
+  "736": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          75.0,
+          560.0,
+          143.0,
+          578.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          121.0,
+          566.0,
+          203.0,
+          584.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          253.0,
+          399.0,
+          368.0,
+          422.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          245.0,
+          506.0,
+          343.0,
+          529.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          235.0,
+          617.0,
+          332.0,
+          646.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          337.0,
+          365.0,
+          451.0,
+          386.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          414.0,
+          515.0,
+          545.0,
+          549.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          442.0,
+          626.0,
+          577.0,
+          658.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          396.0,
+          741.0,
+          522.0,
+          771.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          200.0,
+          640.0,
+          233.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          562.0,
+          263.0,
+          720.0,
+          296.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          718.0,
+          251.0,
+          898.0,
+          293.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          633.0,
+          526.0,
+          775.0,
+          572.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          702.0,
+          510.0,
+          858.0,
+          590.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          713.0,
+          579.0,
+          873.0,
+          625.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          650.0,
+          968.0,
+          810.0,
+          995.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        852.0,
+        638.0,
+        875.0,
+        652.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        118.0,
+        19.0
+      ],
+      [
+        118.0,
+        980.0
+      ]
+    ]
+  },
+  "864": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          342.0,
+          924.0,
+          857.0,
+          1000.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        764.0,
+        163.0,
+        826.0,
+        204.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        606.0,
+        17.0
+      ],
+      [
+        608.0,
+        924.0
+      ]
+    ]
+  },
+  "112": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          217.0,
+          133.0,
+          303.0,
+          150.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          292.0,
+          52.0,
+          381.0,
+          74.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          347.0,
+          17.0,
+          428.0,
+          30.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          278.0,
+          595.0,
+          360.0,
+          622.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          352.0,
+          963.0,
+          452.0,
+          988.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          399.0,
+          532.0,
+          498.0,
+          555.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          438.0,
+          597.0,
+          549.0,
+          618.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          471.0,
+          355.0,
+          586.0,
+          388.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          158.0,
+          604.0,
+          185.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          538.0,
+          79.0,
+          663.0,
+          114.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          580.0,
+          100.0,
+          711.0,
+          143.0
+        ],
+        "team": "Team red",
+        "jersey_number": "17"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          492.0,
+          556.0,
+          613.0,
+          583.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          508.0,
+          613.0,
+          619.0,
+          638.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          549.0,
+          626.0,
+          663.0,
+          661.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          620.0,
+          544.0,
+          743.0,
+          576.0
+        ],
+        "team": "Team red",
+        "jersey_number": "68"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          617.0,
+          596.0,
+          746.0,
+          642.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          672.0,
+          169.0,
+          822.0,
+          212.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          709.0,
+          303.0,
+          862.0,
+          345.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        710.0,
+        539.0,
+        725.0,
+        549.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        233.0,
+        19.0
+      ],
+      [
+        232.0,
+        508.0
+      ],
+      [
+        230.0,
+        999.0
+      ]
+    ]
+  },
+  "240": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          146.0,
+          307.0,
+          212.0,
+          326.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          168.0,
+          513.0,
+          243.0,
+          526.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          249.0,
+          452.0,
+          336.0,
+          474.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          323.0,
+          203.0,
+          431.0,
+          235.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          289.0,
+          303.0,
+          375.0,
+          327.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          511.0,
+          232.0,
+          646.0,
+          267.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          483.0,
+          288.0,
+          604.0,
+          324.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          488.0,
+          403.0,
+          611.0,
+          428.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          529.0,
+          417.0,
+          658.0,
+          450.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          663.0,
+          467.0,
+          810.0,
+          506.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          658.0,
+          534.0,
+          799.0,
+          589.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          669.0,
+          587.0,
+          796.0,
+          632.0
+        ],
+        "team": "Team red",
+        "jersey_number": "8"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          652.0,
+          622.0,
+          796.0,
+          658.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          437.0,
+          644.0,
+          558.0,
+          668.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          385.0,
+          822.0,
+          500.0,
+          843.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          357.0,
+          882.0,
+          464.0,
+          908.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          463.0,
+          797.0,
+          584.0,
+          822.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          507.0,
+          892.0,
+          634.0,
+          927.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          223.0,
+          899.0,
+          313.0,
+          918.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        781.0,
+        639.0,
+        800.0,
+        650.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        179.0,
+        19.0
+      ],
+      [
+        181.0,
+        999.0
+      ]
+    ]
+  },
+  "368": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          461.0,
+          169.0,
+          575.0,
+          198.0
+        ],
+        "team": "Team red",
+        "jersey_number": "7"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          399.0,
+          239.0,
+          508.0,
+          271.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          353.0,
+          353.0,
+          442.0,
+          386.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          514.0,
+          309.0,
+          638.0,
+          345.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          227.0,
+          456.0,
+          308.0,
+          473.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          321.0,
+          474.0,
+          414.0,
+          495.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          468.0,
+          474.0,
+          582.0,
+          503.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          514.0,
+          517.0,
+          624.0,
+          553.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          656.0,
+          329.0,
+          797.0,
+          388.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          725.0,
+          117.0,
+          880.0,
+          183.0
+        ],
+        "team": "Team red",
+        "jersey_number": "4"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          499.0,
+          705.0,
+          623.0,
+          737.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          528.0,
+          759.0,
+          657.0,
+          793.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          615.0,
+          796.0,
+          742.0,
+          831.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          278.0,
+          896.0,
+          372.0,
+          915.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          415.0,
+          922.0,
+          526.0,
+          951.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          760.0,
+          928.0,
+          886.0,
+          981.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          552.0,
+          982.0,
+          696.0,
+          1000.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          609.0,
+          959.0,
+          748.0,
+          993.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        611.0,
+        520.0,
+        627.0,
+        532.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        231.0,
+        18.0
+      ],
+      [
+        230.0,
+        411.0
+      ],
+      [
+        230.0,
+        563.0
+      ],
+      [
+        231.0,
+        804.0
+      ],
+      [
+        231.0,
+        997.0
+      ]
+    ]
+  },
+  "496": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          103.0,
+          517.0,
+          172.0,
+          539.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          140.0,
+          555.0,
+          226.0,
+          575.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          243.0,
+          670.0,
+          344.0,
+          693.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          278.0,
+          471.0,
+          377.0,
+          495.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          316.0,
+          384.0,
+          442.0,
+          410.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          366.0,
+          287.0,
+          485.0,
+          316.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          235.0,
+          563.0,
+          269.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          426.0,
+          559.0,
+          563.0,
+          586.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          368.0,
+          725.0,
+          492.0,
+          755.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          451.0,
+          768.0,
+          581.0,
+          804.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          428.0,
+          840.0,
+          565.0,
+          868.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          633.0,
+          502.0,
+          804.0,
+          557.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          642.0,
+          541.0,
+          802.0,
+          583.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          588.0,
+          679.0,
+          720.0,
+          715.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          684.0,
+          680.0,
+          831.0,
+          744.0
+        ],
+        "team": "Team red",
+        "jersey_number": "56"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          660.0,
+          772.0,
+          822.0,
+          809.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        757.0,
+        702.0,
+        776.0,
+        715.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        120.0,
+        0.0
+      ],
+      [
+        120.0,
+        1000.0
+      ]
+    ]
+  },
+  "624": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          91.0,
+          401.0,
+          134.0,
+          415.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          108.0,
+          433.0,
+          192.0,
+          451.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          219.0,
+          542.0,
+          321.0,
+          560.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          238.0,
+          357.0,
+          339.0,
+          378.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          267.0,
+          260.0,
+          393.0,
+          277.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          334.0,
+          133.0,
+          451.0,
+          177.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          435.0,
+          172.0,
+          574.0,
+          213.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          403.0,
+          328.0,
+          529.0,
+          359.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          394.0,
+          431.0,
+          528.0,
+          469.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          396.0,
+          613.0,
+          526.0,
+          642.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          401.0,
+          636.0,
+          534.0,
+          661.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          617.0,
+          252.0,
+          783.0,
+          296.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          658.0,
+          358.0,
+          839.0,
+          388.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          599.0,
+          647.0,
+          694.0,
+          680.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          654.0,
+          658.0,
+          804.0,
+          705.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          617.0,
+          696.0,
+          750.0,
+          746.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        779.0,
+        624.0,
+        801.0,
+        638.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        113.0,
+        19.0
+      ],
+      [
+        112.0,
+        989.0
+      ]
+    ]
+  },
+  "752": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          110.0,
+          497.0,
+          188.0,
+          518.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          239.0,
+          329.0,
+          351.0,
+          351.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          233.0,
+          436.0,
+          328.0,
+          460.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          222.0,
+          542.0,
+          319.0,
+          563.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          324.0,
+          293.0,
+          439.0,
+          326.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          403.0,
+          437.0,
+          538.0,
+          475.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          433.0,
+          547.0,
+          569.0,
+          577.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          388.0,
+          672.0,
+          508.0,
+          705.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          489.0,
+          143.0,
+          634.0,
+          172.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          564.0,
+          192.0,
+          718.0,
+          241.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          615.0,
+          486.0,
+          756.0,
+          543.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          688.0,
+          547.0,
+          850.0,
+          606.0
+        ],
+        "team": "Team black",
+        "jersey_number": "14"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          691.0,
+          576.0,
+          856.0,
+          630.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          632.0,
+          928.0,
+          786.0,
+          955.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          715.0,
+          119.0,
+          886.0,
+          157.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        834.0,
+        630.0,
+        859.0,
+        644.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        114.0,
+        18.0
+      ],
+      [
+        112.0,
+        977.0
+      ]
+    ]
+  },
+  "880": {
+    "detections": [
+      {
+        "label": "player",
+        "box_2d": [
+          234.0,
+          53.0,
+          319.0,
+          80.0
+        ],
+        "team": "Gray",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          663.0,
+          269.0,
+          826.0,
+          319.0
+        ],
+        "team": "Team red",
+        "jersey_number": "11"
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          538.0,
+          466.0,
+          674.0,
+          501.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          638.0,
+          655.0,
+          792.0,
+          696.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          618.0,
+          675.0,
+          762.0,
+          708.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          535.0,
+          773.0,
+          676.0,
+          810.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          384.0,
+          796.0,
+          495.0,
+          836.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          308.0,
+          800.0,
+          417.0,
+          840.0
+        ],
+        "team": "Team black",
+        "jersey_number": null
+      },
+      {
+        "label": "player",
+        "box_2d": [
+          283.0,
+          873.0,
+          372.0,
+          913.0
+        ],
+        "team": "Team red",
+        "jersey_number": null
+      }
+    ],
+    "ball": {
+      "box_2d": [
+        785.0,
+        318.0,
+        806.0,
+        331.0
+      ]
+    },
+    "pitch_boundary": [
+      [
+        109.0,
+        19.0
+      ],
+      [
+        131.0,
+        281.0
+      ],
+      [
+        131.0,
+        706.0
+      ],
+      [
+        114.0,
+        989.0
+      ]
+    ]
+  }
+}

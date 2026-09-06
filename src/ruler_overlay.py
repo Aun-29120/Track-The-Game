@@ -94,4 +94,6 @@ def add_ruler(frame: Image.Image) -> tuple[Image.Image, RulerGeometry]:
     draw.rectangle([0, 0, band, band], fill="white")
     draw.text((3, band // 2 - 5), "0,0", fill="black", font=_get_font(max(9, band // 4)))
 
+
+
     return canvas, geo

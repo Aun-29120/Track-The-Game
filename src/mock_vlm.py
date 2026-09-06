@@ -2,9 +2,8 @@
 TEST-ONLY stand-in for the real VLM call. Finds colored blobs via basic
 OpenCV thresholding instead of asking a model to look at the image.
 
-This exists purely so we can validate the tracker (Kalman + Hungarian +
-optical flow + rendering) end-to-end against the synthetic clip from
-make_test_clip.py without spending any OpenRouter budget while the
+This exists purely so we can validate the tracker end-to-end against the
+synthetic clip from make_test_clip.py without spending any OpenRouter budget
 pipeline itself is still being shaken out. It is NOT part of the actual
 submission pipeline and must not be used on real footage -- it only knows
 about the exact synthetic colors make_test_clip.py draws.
@@ -41,11 +40,11 @@ def _find_blobs(frame_bgr: np.ndarray, target_bgr: tuple[int, int, int]) -> list
     return centers
 
 
-def mock_detect_frame(frame_bgr: np.ndarray, geo: RulerGeometry) -> FrameDetections:
+def mock_detect_frame(frame_bgr: np.ndarray, geo: RulerGeometry, team_a: str, team_b: str) -> FrameDetections:
     players = []
     
     # helper to mock bounding boxes
-    def _add_players(centers, label_prefix):
+    def _add_players(centers, label_prefix, team_str):
         for i, (px, py) in enumerate(centers):
             # mock bounding box of 40x80 pixels around the center
             ymin = max(0, py - 40)
@@ -58,10 +57,10 @@ def mock_detect_frame(frame_bgr: np.ndarray, geo: RulerGeometry) -> FrameDetecti
             rx_max, ry_max = geo.orig_px_to_ruler(xmax, ymax)
             
             box_2d = [ry_min, rx_min, ry_max, rx_max]
-            players.append(PlayerDetection(label="player", box_2d=box_2d))
+            players.append(PlayerDetection(label="player", team=team_str, box_2d=box_2d))
 
-    _add_players(_find_blobs(frame_bgr, TEAM_A_BGR), "a")
-    _add_players(_find_blobs(frame_bgr, TEAM_B_BGR), "b")
+    _add_players(_find_blobs(frame_bgr, TEAM_A_BGR), "a", team_a)
+    _add_players(_find_blobs(frame_bgr, TEAM_B_BGR), "b", team_b)
 
     # Ball detection
     ball_det = None
@@ -82,8 +81,10 @@ def mock_detect_frame(frame_bgr: np.ndarray, geo: RulerGeometry) -> FrameDetecti
 def detect_all_keyframes_mock(
     original_frames: dict[int, np.ndarray],
     geo: RulerGeometry,
+    team_a: str,
+    team_b: str,
 ) -> dict[int, KeyframeResult]:
     return {
-        idx: KeyframeResult(frame_index=idx, detections=mock_detect_frame(frame, geo))
+        idx: KeyframeResult(frame_index=idx, detections=mock_detect_frame(frame, geo, team_a, team_b))
         for idx, frame in original_frames.items()
     }
