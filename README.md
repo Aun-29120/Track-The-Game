@@ -51,9 +51,7 @@ The system was evaluated against strict project constraints: a target processing
 | Clip 4 | 907 | 114 | 8 | 51.7 | 0.3854 |
 | Clip 5 | 901 | 57 | 16 | 62.2 | 0.1773 |
 
-While the pipeline successfully achieved the strict cost limit (averaging $0.33 - $0.45), processing times remain near 50 seconds, exceeding the 25-second maximum target. Extensive local optimizations—including hardware-accelerated video encoding, asynchronous threading, and connection pool scaling—cut the initial baseline time in half. However, the system is ultimately bottlenecked by the physical limits of cloud API architecture.
 
-Because the pipeline dispatches dozens of keyframes concurrently, the total execution time is strictly dictated by the single slowest network response in that batch (tail-latency). Ablation testing (Clip 5) confirms this: halving the total number of API requests successfully reduced the cost but did not decrease the overall processing time. Achieving a sub-15-second run is currently constrained by external cloud queueing, rather than local compute inefficiency.
 
 ```
 
